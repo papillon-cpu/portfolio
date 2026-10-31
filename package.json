@@ -1,0 +1,14 @@
+{
+  "name": "portfolio",
+  "version": "0.2.0",
+  "private": true,
+  "type": "module",
+  "description": "Портфолио Никиты Кутылова: хаб и четыре демонстрационных проекта (статичный сайт в папке site)",
+  "scripts": {
+    "test": "node --test",
+    "serve": "node tools/serve.mjs",
+    "photos": "node tools/fetch-photos.mjs",
+    "credits": "node tools/build-credits.mjs",
+    "meridian": "node tools/build-meridian.mjs"
+  }
+}

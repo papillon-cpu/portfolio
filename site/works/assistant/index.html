@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Помощник заявок — демо ИИ-ассистента для малого бизнеса</title>
+<meta name="description" content="Демо помощника, который отвечает клиентам на сайте и в Telegram, собирает контакты и передаёт заявку менеджеру. Работает в браузере, без отправки данных.">
+<meta name="theme-color" content="#0c0d10">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600&family=Unbounded:wght@500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css?v=1">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230c0d10'/%3E%3Ccircle cx='16' cy='16' r='6' fill='%23c8f542'/%3E%3C/svg%3E">
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#"><span class="brand__dot" aria-hidden="true"></span>ПОМОЩНИК ЗАЯВОК</a>
+  <nav class="top__nav" aria-label="Разделы">
+    <a href="#demo">Демо</a>
+    <a href="#how">Как работает</a>
+    <a href="#limits">Границы</a>
+  </nav>
+  <a class="top__back" href="../../index.html">← Портфолио</a>
+</header>
+
+<main>
+  <section class="hero">
+    <p class="mono">демонстрационный проект</p>
+    <h1>Ответит клиенту<br>за секунды.<br><em>Заявка останется вам.</em></h1>
+    <p class="lead">Помощник для сайта и Telegram: отвечает на частые вопросы по вашим данным, не выдумывает лишнего, а когда клиент готов, собирает контакты и передаёт заявку менеджеру.</p>
+    <div class="hero__cta">
+      <a class="btn btn--main" href="#demo">Попробовать</a>
+      <a class="btn" href="#how">Как это устроено</a>
+    </div>
+  </section>
+
+  <section class="demo" id="demo">
+    <div class="demo__chat">
+      <div class="chat__head">
+        <span class="chat__title">Тропа Таганая · помощник</span>
+        <span class="chat__state"><i aria-hidden="true"></i>демо на правилах</span>
+      </div>
+      <div class="chat__log" id="log" aria-live="polite"></div>
+      <div class="chat__chips" id="chips"></div>
+      <form class="chat__form" id="form" autocomplete="off">
+        <label class="sr" for="msg">Сообщение</label>
+        <input id="msg" name="msg" type="text" placeholder="Напишите вопрос…" maxlength="300">
+        <button type="submit" aria-label="Отправить">↑</button>
+      </form>
+    </div>
+    <aside class="demo__side">
+      <div class="lead-card" id="lead" aria-live="polite"></div>
+      <p class="side__note">Справа то, что получил бы менеджер. Карточка заполняется по ходу диалога, а здесь ничего не отправляется и не сохраняется.</p>
+    </aside>
+  </section>
+
+  <section class="how" id="how">
+    <h2>Как это работает</h2>
+    <ol class="how__list">
+      <li><span class="mono">01</span><h3>База знаний</h3><p>Вы даёте цены, условия, FAQ и правила. Помощник отвечает только по ним, а не из головы.</p></li>
+      <li><span class="mono">02</span><h3>Диалог</h3><p>Отвечает на частые вопросы и подсказывает следующий шаг кнопками, чтобы клиент не терялся.</p></li>
+      <li><span class="mono">03</span><h3>Заявка</h3><p>Когда клиент готов, спрашивает имя, контакт и формат. Проверяет, что контакт похож на настоящий.</p></li>
+      <li><span class="mono">04</span><h3>Передача</h3><p>Карточка уходит менеджеру в Telegram. Если вопрос непонятен, помощник честно предлагает позвать человека.</p></li>
+    </ol>
+  </section>
+
+  <section class="limits" id="limits">
+    <h2>Что здесь настоящее, а что нет</h2>
+    <div class="limits__grid">
+      <div class="lim lim--yes"><h3>Работает сейчас</h3><ul><li>Ответы на частые вопросы по ключевым словам</li><li>Сбор имени, контакта и формата с проверкой</li><li>Передача к менеджеру, если вопрос непонятен</li><li>Карточка заявки в реальном времени</li></ul></div>
+      <div class="lim lim--no"><h3>В демо не подключено</h3><ul><li>Языковая модель: нужен ключ и согласие на обработку данных</li><li>Отправка в Telegram и CRM: подключается под ваш аккаунт</li><li>Память между визитами и аналитика</li><li>Реальные цены и даты: здесь они условные</li></ul></div>
+    </div>
+    <p class="foot">Демонстрационный проект · <a href="../../index.html">портфолио Никиты Кутылова</a> · <a href="../taganay-expedition/index.html">сайт «Тропа Таганая»</a></p>
+  </section>
+</main>
+
+<script src="assets/kb.js"></script>
+<script src="assets/chat.js"></script>
+</body>
+</html>
