@@ -5,29 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Портфолио Никиты Кутылова</title>
 <meta name="description" content="Никита Кутылов. Веб-дизайн, лендинги, Telegram-боты, мини-приложения и автоматизации для малого бизнеса. В портфолио четыре демонстрационных проекта.">
-<meta name="theme-color" content="#e2f66e">
+<meta name="theme-color" content="#f8f8f8">
 <meta property="og:title" content="Никита Кутылов — сайты, боты и автоматизации">
 <meta property="og:description" content="Веб-дизайн, лендинги, Telegram-боты, мини-приложения и автоматизации для малого бизнеса.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&family=Montserrat:wght@300&family=Unbounded:wght@600&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/hub.css?v=3">
+<script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")==="dark"?"dark":"light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script>
+<link rel="stylesheet" href="assets/hub.css?v=4">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e2f66e'/%3E%3Cpath d='M8 24V8l8 10V8m8 16V8' fill='none' stroke='%23131313' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
 </head>
 <body>
 
-<div class="ticker" aria-label="Объявление">
-  <a href="https://t.me/sumashedshii0" target="_blank" rel="noopener">
-    <div class="ticker__track" data-loop>
-      <span class="ticker__item"><b>ПРИНИМАЮ ЗАКАЗЫ:</b> лендинги, Telegram-боты, мини-приложения, автоматизации</span>
-      <span class="ticker__item">✦</span>
-      <span class="ticker__item">Первый экран покажу до оплаты основной части</span>
-      <span class="ticker__item">✦</span>
-      <span class="ticker__item"><b>НАПИСАТЬ В TELEGRAM →</b></span>
-      <span class="ticker__item">✦</span>
-    </div>
-  </a>
-</div>
 
 <header class="nav" id="nav">
   <a class="nav__logo" href="#top">Никита Кутылов</a>
@@ -37,22 +26,28 @@
     <a href="#why">Подход</a>
     <a href="#faq">Вопросы</a>
   </nav>
-  <a class="nav__cta" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Написать</a>
+  <div class="nav__right">
+    <a class="nav__cta" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Написать</a>
+    <button class="theme" id="theme" type="button" aria-label="Включить тёмную тему" aria-pressed="false" title="Тема">
+      <svg class="theme__moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4 8 8 0 1 0 20 14.5z"/></svg>
+      <svg class="theme__sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9l2.1 2.1M17 17l2.1 2.1M4.9 19.1L7 17M17 7l2.1-2.1"/></svg>
+    </button>
+  </div>
 </header>
 
 <main id="top">
   <section class="hero">
     <div class="hero__text">
-      <p class="hero__proof reveal">Четыре демо-проекта ниже: открываются и работают</p>
+      <p class="hero__proof reveal">Четыре демо-проекта на полке: нажмите на любой</p>
       <h1 class="reveal">Сайты и боты, которые приводят клиентов.</h1>
       <p class="hero__sub reveal">Веб-дизайн, лендинги, Telegram-боты, мини-приложения и автоматизации для малого бизнеса.</p>
       <a class="btn reveal" href="#works">Смотреть работы</a>
     </div>
-    <div class="shelf" aria-hidden="true">
-      <div class="shelf__item"><img src="assets/img/cover-taganay.jpg" alt=""></div>
-      <div class="shelf__item"><img src="assets/img/cover-belogorye.jpg" alt=""></div>
-      <div class="shelf__item"><img src="assets/img/cover-meridian.jpg" alt=""></div>
-      <div class="shelf__item"><img src="assets/img/cover-assistant.jpg" alt=""></div>
+    <div class="shelf" id="works">
+      <a class="shelf__item" href="works/taganay-expedition/index.html" aria-label="Тропа Таганая: лендинг, демо"><img src="assets/img/cover-taganay.jpg" alt=""><span class="shelf__name">Тропа Таганая</span></a>
+      <a class="shelf__item" href="works/belogorye/index.html" aria-label="Белогорье: лендинг, демо"><img src="assets/img/cover-belogorye.jpg" alt=""><span class="shelf__name">Белогорье</span></a>
+      <a class="shelf__item" href="works/meridian/index.html" aria-label="Меридиан: лендинг, демо"><img src="assets/img/cover-meridian.jpg" alt=""><span class="shelf__name">Меридиан</span></a>
+      <a class="shelf__item" href="works/assistant/index.html" aria-label="Помощник заявок: живое демо"><img src="assets/img/cover-assistant.jpg" alt=""><span class="shelf__name">Помощник заявок</span></a>
     </div>
   </section>
 
@@ -75,41 +70,6 @@
         <span class="mq mq--1">Чат-боты для сайта</span>
         <span class="mq mq--2">Админ-панели</span>
       </div>
-    </div>
-  </section>
-
-  <section class="section" id="works">
-    <h2 class="reveal">Работы</h2>
-    <div class="tabs" role="tablist" aria-label="Категории работ">
-      <button class="tab" role="tab" aria-selected="true" data-filter="all">Все</button>
-      <button class="tab" role="tab" aria-selected="false" data-filter="landing">Лендинги</button>
-      <button class="tab" role="tab" aria-selected="false" data-filter="ai">ИИ и автоматизации</button>
-    </div>
-    <div class="works">
-      <a class="work reveal" data-cat="landing" href="works/taganay-expedition/index.html">
-        <span class="work__title">Тропа Таганая</span><span class="work__cat">Лендинг · туризм · демо</span>
-        <div class="work__img"><img src="assets/img/cover-taganay.jpg" alt="Тропа Таганая: главный экран лендинга" loading="lazy"></div>
-        <span class="work__desc">Походы по национальному парку. Маршрут по дням, цены, вопросы и форма заявки.</span>
-        <span class="work__bar">Открыть</span>
-      </a>
-      <a class="work reveal" data-cat="landing" href="works/belogorye/index.html">
-        <span class="work__title">Белогорье</span><span class="work__cat">Лендинг · горнолыжный курорт · демо</span>
-        <div class="work__img"><img src="assets/img/cover-belogorye.jpg" alt="Белогорье: главный экран лендинга" loading="lazy"></div>
-        <span class="work__desc">Курорт и школа катания: видео на весь экран, программы с ценами, трассы, запись.</span>
-        <span class="work__bar">Открыть</span>
-      </a>
-      <a class="work reveal" data-cat="landing" href="works/meridian/index.html">
-        <span class="work__title">Меридиан</span><span class="work__cat">Лендинг · клуб походов · демо</span>
-        <div class="work__img"><img src="assets/img/cover-meridian.jpg" alt="Меридиан: главный экран лендинга" loading="lazy"></div>
-        <span class="work__desc">Клуб походов по Альпам. Листаемая шапка с компасом и карточки маршрутов с галереей.</span>
-        <span class="work__bar">Открыть</span>
-      </a>
-      <a class="work reveal" data-cat="ai" href="works/assistant/index.html">
-        <span class="work__title">Помощник заявок</span><span class="work__cat">ИИ-помощник · живое демо</span>
-        <div class="work__img"><img src="assets/img/cover-assistant.jpg" alt="Помощник заявок: чат и карточка заявки" loading="lazy"></div>
-        <span class="work__desc">Чат отвечает клиентам по базе знаний и собирает заявку. Можно написать самому.</span>
-        <span class="work__bar">Попробовать</span>
-      </a>
     </div>
   </section>
 

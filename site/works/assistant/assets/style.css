@@ -1,7 +1,7 @@
-/* Стиль NEUROCAREER: графит, лаймовый акцент, Unbounded + Onest */
+/* Палитра «хвоя и мята»: тёмно-зелёный фон, мятный акцент; шрифты Unbounded + Onest */
 :root {
-  --bg: #0c0d10; --panel: #14161b; --panel2: #1a1d24; --line: #2a2e38;
-  --text: #eef0f4; --mute: #8d94a3; --accent: #c8f542; --on-accent: #0c0d10; --warn: #ffb347;
+  --bg: #0c1712; --panel: #112019; --panel2: #152a21; --line: #25392e;
+  --text: #ecf4ee; --mute: #84998c; --accent: #7fe3b0; --on-accent: #072015; --warn: #ffb347;
   --display: "Unbounded", "Onest", system-ui, sans-serif; --body: "Onest", system-ui, sans-serif; --mono: "JetBrains Mono", ui-monospace, monospace;
 }
 * { box-sizing: border-box; }
@@ -11,7 +11,7 @@ a { color: inherit; }
 .sr { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
 .mono { font: 500 12px/1 var(--mono); letter-spacing: .14em; text-transform: uppercase; color: var(--accent); margin: 0 0 18px; }
 
-.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 24px; padding: 14px max(20px, 4vw); background: rgba(12,13,16,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+.top { position: sticky; top: 0; z-index: 10; display: flex; align-items: center; gap: 24px; padding: 14px max(20px, 4vw); background: rgba(12,23,18,.85); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
 .brand { display: flex; align-items: center; gap: 10px; font: 600 14px/1 var(--display); letter-spacing: .04em; text-decoration: none; }
 .brand__dot { width: 10px; height: 10px; border-radius: 50%; background: var(--accent); box-shadow: 0 0 12px var(--accent); }
 .top__nav { display: flex; gap: 20px; margin-left: auto; font-size: 14px; color: var(--mute); }
@@ -54,7 +54,7 @@ h3 { font: 600 17px/1.3 var(--body); margin: 8px 0; }
 
 .demo__side { display: flex; flex-direction: column; gap: 14px; }
 .lead-card { background: var(--panel); border: 1px solid var(--line); border-radius: 24px; padding: 22px; transition: border-color .3s, box-shadow .3s; }
-.lead-card.is-done { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 32px rgba(200,245,66,.12); }
+.lead-card.is-done { border-color: var(--accent); box-shadow: 0 0 0 1px var(--accent), 0 0 32px rgba(127,227,176,.14); }
 .lead__title { font: 600 15px/1.2 var(--display); margin: 0 0 14px; }
 .lead__row { display: grid; grid-template-columns: 110px 1fr; gap: 10px; padding: 9px 0; border-top: 1px solid var(--line); }
 .lead__k { color: var(--mute); font-size: 14px; }

@@ -9,16 +9,24 @@
     });
   });
 
-  // Вкладки «Все / Лендинги / ИИ и автоматизации»
-  var tabs = document.querySelectorAll(".tab");
-  var cards = document.querySelectorAll(".work");
-  tabs.forEach(function (tab) {
-    tab.addEventListener("click", function () {
-      var f = tab.getAttribute("data-filter");
-      tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
-      cards.forEach(function (c) { c.hidden = f !== "all" && c.getAttribute("data-cat") !== f; });
+  // Переключатель темы: выбор запоминается в браузере
+  var root = document.documentElement;
+  var themeBtn = document.getElementById("theme");
+  function paintTheme() {
+    var dark = root.getAttribute("data-theme") === "dark";
+    if (!themeBtn) return;
+    themeBtn.setAttribute("aria-pressed", dark ? "true" : "false");
+    themeBtn.setAttribute("aria-label", dark ? "Включить светлую тему" : "Включить тёмную тему");
+  }
+  paintTheme();
+  if (themeBtn) {
+    themeBtn.addEventListener("click", function () {
+      var next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      root.setAttribute("data-theme", next);
+      try { localStorage.setItem("theme", next); } catch (e) {}
+      paintTheme();
     });
-  });
+  }
 
   var items = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {

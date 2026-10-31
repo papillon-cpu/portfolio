@@ -123,24 +123,41 @@ async function open(path, opts = {}) {
   await ctx.close();
 }
 
-// Хаб: переходы в работы и обратно, ссылка на Telegram
+// Хаб: полка с работами, переходы, тема, Telegram
 {
   const { ctx, page, errs } = await open("/");
-  const hrefs = await page.$$eval(".work", (as) => as.map((a) => a.getAttribute("href")));
-  check("Хаб: четыре карточки работ", hrefs.length === 4, hrefs.join(", "));
+  const hrefs = await page.$$eval(".shelf__item", (as) => as.map((a) => a.getAttribute("href")));
+  check("Хаб: четыре работы на полке", hrefs.length === 4, hrefs.join(", "));
+  check("Хаб: раздела «Работы» и жёлтой строки больше нет", (await page.locator("#works.section, .ticker, .tab").count()) === 0);
   for (const h of hrefs) {
     const r = await page.request.get(BASE + "/" + h);
     check(`Хаб: ${h} открывается`, r.ok());
   }
-  await page.locator(".work").nth(1).scrollIntoViewIfNeeded();
-  await page.locator(".work").nth(1).click();
+  await page.locator(".shelf__item").nth(1).click();
   await page.waitForURL(/belogorye/);
-  check("Хаб: клик по карточке ведёт в проект", /belogorye/.test(page.url()));
+  check("Хаб: клик по работе ведёт в проект", /belogorye/.test(page.url()));
   await page.goBack();
   await page.waitForTimeout(500);
   check("Хаб: «назад» возвращает на хаб", page.url().replace(BASE, "") === "/");
+
+  // тема: по умолчанию светлая, переключается, запоминается после обновления
+  const theme = () => page.evaluate(() => document.documentElement.getAttribute("data-theme"));
+  check("Хаб: по умолчанию светлая тема", (await theme()) === "light");
+  await page.locator("#theme").click();
+  check("Хаб: кнопка включает тёмную тему", (await theme()) === "dark");
+  const bg = await page.evaluate(() => getComputedStyle(document.body).backgroundColor);
+  check("Хаб: фон страницы стал тёмным", /rgb\(18, 18, 18\)/.test(bg), bg);
+  await page.reload();
+  await page.waitForTimeout(500);
+  check("Хаб: выбор темы помнится после обновления", (await theme()) === "dark");
+  await page.locator("#theme").click();
+  check("Хаб: кнопка возвращает светлую тему", (await theme()) === "light");
+
   const tg = await page.$$eval('a[href*="t.me"]', (as) => [...new Set(as.map((a) => a.href))]);
   check("Хаб: ссылка на Telegram одна и верная", tg.length === 1 && tg[0] === "https://t.me/sumashedshii0", tg.join(", "));
+  await page.waitForTimeout(400);
+  const btnBg = await page.locator(".footer__lead .btn").evaluate((e) => getComputedStyle(e).backgroundColor);
+  check("Хаб: кнопка Telegram в подвале контурная, не залитая", /rgba\(0, 0, 0, 0\)|transparent/.test(btnBg), btnBg);
   check("Хаб: без ошибок в консоли", errs.length === 0, errs.join(" | "));
   await ctx.close();
 }

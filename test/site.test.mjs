@@ -109,3 +109,16 @@ const portraitSize = statSync(path.join(SITE, "assets/img/nikita.jpg")).size;
 test("хаб: вместо серой заглушки лежит настоящее фото автора", { todo: portraitSize < 20000 }, () => {
   assert.ok(portraitSize >= 20000, "в site/assets/img/nikita.jpg всё ещё заглушка");
 });
+
+test("хаб: нет жёлтой бегущей строки и дублирующего раздела «Работы», есть переключатель темы", () => {
+  const hub = text(path.join(SITE, "index.html"));
+  assert.doesNotMatch(hub, /class="ticker"|id="works" *>s*<h2|data-filter=/);
+  assert.match(hub, /id="theme"/);
+  assert.equal((hub.match(/class="shelf__item"/g) || []).length, 4);
+});
+
+test("помощник: палитра «хвоя и мята», лаймового акцента не осталось", () => {
+  const css = text(path.join(SITE, "works/assistant/assets/style.css"));
+  assert.match(css, /--accent: #7fe3b0/);
+  assert.doesNotMatch(css, /c8f542/i);
+});
