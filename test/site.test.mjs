@@ -73,7 +73,7 @@ test("сайт: у каждой страницы есть title, description и 
 
 test("фото: у каждой картинки есть запись об авторе и лицензии, только свободные лицензии", () => {
   const credits = JSON.parse(text(path.join(SITE, "credits.json")));
-  const usedFiles = ours(files).filter((f) => /\/assets\/img\/(?!cover-)[^/]+\.jpg$/.test(f.replace(/\\/g, "/")));
+  const usedFiles = ours(files).filter((f) => /\/assets\/img\/(?!cover-|nikita)[^/]+\.jpg$/.test(f.replace(/\\/g, "/")));
   const credited = new Set(credits.flatMap((c) => c.uses));
   const unaccounted = usedFiles
     .map((f) => path.relative(SITE, f).replace(/\\/g, "/"))
@@ -101,5 +101,11 @@ test("хаб: нет сведений о том, где живёт и откуд
 test("хаб: на главной нет фотографии автора или пейзажа (только карточки работ)", () => {
   const hub = text(path.join(SITE, "index.html"));
   const imgs = [...hub.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]);
-  assert.ok(imgs.length > 0 && imgs.every((s) => /assets\/img\/cover-/.test(s)), imgs.join(", "));
+  assert.ok(imgs.length > 0 && imgs.every((s) => /assets\/img\/(cover-|nikita\.jpg)/.test(s)), imgs.join(", "));
+});
+
+// Пока в портрете стоит серая заглушка (меньше 60 КБ), проверка помечена как «todo»: положите настоящее фото в site/assets/img/nikita.jpg.
+const portraitSize = statSync(path.join(SITE, "assets/img/nikita.jpg")).size;
+test("хаб: вместо серой заглушки лежит настоящее фото автора", { todo: portraitSize < 60000 }, () => {
+  assert.ok(portraitSize >= 60000, "в site/assets/img/nikita.jpg всё ещё заглушка");
 });

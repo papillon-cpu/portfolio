@@ -18,7 +18,6 @@ npm run serve     # открыть сайт на http://localhost:8801
 npm test          # проверки: ссылки, чужой контент, лицензии, логика помощника
 npm run photos    # заново скачать фото и обновить credits.json
 npm run credits   # пересобрать site/credits.html
-node tools/palettes.mjs  # лист с цветовыми вариантами главной (?p=a…f)
 node tools/shots.mjs     # скриншоты и проверка ошибок на ПК и телефоне (нужен Chrome и Playwright из соседнего проекта)
 node tools/interact.mjs  # проверка кликов, модалок, форм, переходов (там же)
 ```

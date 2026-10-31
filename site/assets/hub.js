@@ -1,15 +1,24 @@
-// Появление блоков при прокрутке и подчёркивание шапки.
+// Бегущие строки, фильтр работ и появление блоков при прокрутке.
 (function () {
-  // Превью цветовых вариантов: ?p=a ... ?p=f (вариант A включён по умолчанию)
-  var p = (new URLSearchParams(location.search).get("p") || "").toLowerCase();
-  if (/^[b-f]$/.test(p)) document.documentElement.setAttribute("data-p", p);
+  // Бесшовный цикл: содержимое дублируется один раз, анимация сдвигает ровно на половину.
+  document.querySelectorAll("[data-loop]").forEach(function (track) {
+    Array.prototype.slice.call(track.children).forEach(function (node) {
+      var clone = node.cloneNode(true);
+      clone.setAttribute("aria-hidden", "true");
+      track.appendChild(clone);
+    });
+  });
 
-  var nav = document.getElementById("nav");
-  function onScroll() {
-    nav.classList.toggle("is-stuck", (window.scrollY || 0) > 8);
-  }
-  window.addEventListener("scroll", onScroll, { passive: true });
-  onScroll();
+  // Вкладки «Все / Лендинги / ИИ и автоматизации»
+  var tabs = document.querySelectorAll(".tab");
+  var cards = document.querySelectorAll(".work");
+  tabs.forEach(function (tab) {
+    tab.addEventListener("click", function () {
+      var f = tab.getAttribute("data-filter");
+      tabs.forEach(function (t) { t.setAttribute("aria-selected", t === tab ? "true" : "false"); });
+      cards.forEach(function (c) { c.hidden = f !== "all" && c.getAttribute("data-cat") !== f; });
+    });
+  });
 
   var items = document.querySelectorAll(".reveal");
   if (!("IntersectionObserver" in window)) {
@@ -23,6 +32,6 @@
         io.unobserve(e.target);
       }
     });
-  }, { threshold: 0.1, rootMargin: "0px 0px -5% 0px" });
+  }, { threshold: 0.08, rootMargin: "0px 0px -4% 0px" });
   items.forEach(function (el) { io.observe(el); });
 })();

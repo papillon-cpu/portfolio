@@ -48,11 +48,12 @@ for (const [name, url, cover] of pages) {
       await page.waitForTimeout(1200);
       await page.getByRole("button", { name: "Классика (3 дня)" }).click();
       await page.waitForTimeout(1400);
-      await page.locator("#demo").scrollIntoViewIfNeeded();
+      await page.evaluate(() => window.scrollTo(0, document.querySelector("#demo").getBoundingClientRect().top + window.scrollY - 84));
+      await page.waitForTimeout(300);
     }
     const tag = mobile ? "m" : "d";
     await page.screenshot({ path: `${SHOTS}${name}-${tag}.png` });
-    if (cover && !mobile) await page.screenshot({ path: OUT + cover, type: "jpeg", quality: 82, clip: { x: 0, y: name === "assistant" ? 340 : 0, width: 1440, height: 900 } });
+    if (cover && !mobile) await page.screenshot({ path: OUT + cover, type: "jpeg", quality: 82, clip: { x: 0, y: 0, width: 1440, height: 900 } });
     console.log(`${name} ${tag}: ошибок ${errs.length}, горизонтальный скролл ${hOverflow}px`, errs.slice(0, 4));
     problems += errs.length + (hOverflow > 2 ? 1 : 0);
     await ctx.close();
