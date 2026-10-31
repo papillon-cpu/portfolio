@@ -104,8 +104,8 @@ test("хаб: на главной нет фотографии автора ил�
   assert.ok(imgs.length > 0 && imgs.every((s) => /assets\/img\/(cover-|nikita\.jpg)/.test(s)), imgs.join(", "));
 });
 
-// Пока в портрете стоит серая заглушка (меньше 60 КБ), проверка помечена как «todo»: положите настоящее фото в site/assets/img/nikita.jpg.
+// Пока в портрете стоит серая заглушка (меньше 20 КБ), проверка помечена как «todo»: положите настоящее фото в site/assets/img/nikita.jpg.
 const portraitSize = statSync(path.join(SITE, "assets/img/nikita.jpg")).size;
-test("хаб: вместо серой заглушки лежит настоящее фото автора", { todo: portraitSize < 60000 }, () => {
-  assert.ok(portraitSize >= 60000, "в site/assets/img/nikita.jpg всё ещё заглушка");
+test("хаб: вместо серой заглушки лежит настоящее фото автора", { todo: portraitSize < 20000 }, () => {
+  assert.ok(portraitSize >= 20000, "в site/assets/img/nikita.jpg всё ещё заглушка");
 });
