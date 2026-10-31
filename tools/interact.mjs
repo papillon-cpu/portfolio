@@ -156,8 +156,12 @@ async function open(path, opts = {}) {
   const tg = await page.$$eval('a[href*="t.me"]', (as) => [...new Set(as.map((a) => a.href))]);
   check("Хаб: ссылка на Telegram одна и верная", tg.length === 1 && tg[0] === "https://t.me/sumashedshii0", tg.join(", "));
   await page.waitForTimeout(400);
-  const btnBg = await page.locator(".footer__lead .btn").evaluate((e) => getComputedStyle(e).backgroundColor);
-  check("Хаб: кнопка Telegram в подвале контурная, не залитая", /rgba\(0, 0, 0, 0\)|transparent/.test(btnBg), btnBg);
+  const f = page.locator("footer.footer");
+  await f.scrollIntoViewIfNeeded();
+  check("Хаб: подвал начинается с заголовка «Обсудим ваш проект?»", (await f.locator("h2").innerText()).includes("Обсудим ваш проект"));
+  check("Хаб: в подвале две кнопки: Telegram и «Смотреть работы»", (await f.locator(".cta__btns .btn").allInnerTexts()).join("|").toLowerCase() === "написать в telegram|смотреть работы");
+  check("Хаб: под кнопками строка с контактом", (await f.locator(".cta__note").innerText()).includes("@sumashedshii0"));
+  check("Хаб: нижняя полоса: имя слева, три ссылки справа, мелкая строка ниже", (await f.locator(".footer__bar > span").innerText()).includes("© 2026 Никита Кутылов") && (await f.locator(".footer__bar nav a").count()) === 3 && (await f.locator(".footer__legal").count()) === 1);
   check("Хаб: без ошибок в консоли", errs.length === 0, errs.join(" | "));
   await ctx.close();
 }

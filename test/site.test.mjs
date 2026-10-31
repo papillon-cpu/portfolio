@@ -129,3 +129,12 @@ test("хаб: в подвале нет колонки «Работы» (рабо
   assert.doesNotMatch(footer, /<h4>Работы<\/h4>/);
   assert.doesNotMatch(footer, /works\/taganay-expedition/);
 });
+
+test("хаб: подвал по образцу: призыв, две кнопки, нижняя полоса, без чужих реквизитов", () => {
+  const hub = text(path.join(SITE, "index.html"));
+  const footer = hub.slice(hub.indexOf('<footer class="footer"'));
+  assert.match(footer, /Обсудим ваш проект\?/);
+  assert.equal((footer.match(/class="btn btn--/g) || []).length, 2);
+  assert.match(footer, /footer__bar[\s\S]*Telegram[\s\S]*Работы[\s\S]*Источники фотографий/);
+  assert.doesNotMatch(footer, /ИНН|ОГРНИП|Красноярск|yandex\.ru/);
+});

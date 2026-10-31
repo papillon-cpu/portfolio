@@ -212,3 +212,23 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
 /* кнопка в подвале остаётся контурной и в тёмной теме */
 [data-theme="dark"] .footer__lead .btn { background: transparent; color: var(--on-deep); border-color: rgba(255, 255, 255, .55); }
 [data-theme="dark"] .footer__lead .btn:hover { background: var(--on-deep); color: #131313; border-color: var(--on-deep); }
+
+/* подвал: крупный призыв по центру, две кнопки, нижняя полоса и мелкая строка (по образцу) */
+.footer { display: block; background: var(--deep); color: var(--on-deep); }
+.cta { text-align: center; padding: clamp(72px, 12vw, 128px) 24px clamp(56px, 9vw, 96px); position: relative; overflow: hidden; }
+.cta h2 { color: var(--on-deep); font-size: clamp(38px, 6vw, 72px); margin: 0 0 18px; }
+.cta__lead { max-width: 560px; margin: 0 auto 30px; color: #b9b9b9; font-size: 18px; }
+.cta__btns { display: flex; flex-wrap: wrap; justify-content: center; gap: 12px; }
+.cta .btn { padding: 15px 30px; font-size: 15px; }
+.btn--tg { background: #f2f2f2; color: #131313; border-color: #f2f2f2; }
+.btn--tg:hover { background: var(--lime); color: #131313; border-color: var(--lime); }
+.btn--ghost { background: #1f1f1f; color: #f2f2f2; border: 1px solid #3a3a3a; }
+.btn--ghost:hover { background: #2a2a2a; color: #fff; border-color: #6a6a6a; }
+.cta__note { margin: 26px 0 0; color: #8d8d8d; font-size: 14px; }
+.footer__bar { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px 28px; padding: 26px max(16px, 3vw); border-top: 1px solid #2d2d2d; font-size: 15px; }
+.footer__bar > span { font-weight: 600; letter-spacing: .02em; }
+.footer__bar nav { display: flex; flex-wrap: wrap; gap: 8px 28px; }
+.footer__bar a { color: #b9b9b9; text-decoration: none; }
+.footer__bar a:hover { color: #fff; text-decoration: underline; }
+.footer__legal { padding: 0 max(16px, 3vw) 28px; color: #7c7c7c; font-size: 13px; }
+@media (max-width: 680px) { .footer__bar { flex-direction: column; align-items: flex-start; } }
