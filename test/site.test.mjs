@@ -122,3 +122,10 @@ test("помощник: палитра «хвоя и мята», лаймово�
   assert.match(css, /--accent: #7fe3b0/);
   assert.doesNotMatch(css, /c8f542/i);
 });
+
+test("хаб: в подвале нет колонки «Работы» (работы лежат на «полке» наверху)", () => {
+  const hub = text(path.join(SITE, "index.html"));
+  const footer = hub.slice(hub.indexOf('<footer class="footer">'));
+  assert.doesNotMatch(footer, /<h4>Работы<\/h4>/);
+  assert.doesNotMatch(footer, /works\/taganay-expedition/);
+});
