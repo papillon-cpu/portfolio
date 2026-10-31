@@ -1,15 +1,5 @@
 [
  {
-  "title": "Таганай, вид с автодороги \"75К-013\".jpg",
-  "author": "Oktopus174",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=79030576",
-  "uses": [
-   "hub/hero.jpg"
-  ]
- },
- {
   "title": "Таганай, Вид на Откликной Гребень с Митькиных Скал.jpg",
   "author": "Fanatos",
   "license": "CC BY-SA 4.0",
@@ -36,8 +26,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/2.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=121570551",
   "uses": [
-   "taganay-expedition/day-1.jpg",
-   "meridian/gal-skazok-3.jpg"
+   "taganay-expedition/day-1.jpg"
   ]
  },
  {
@@ -57,8 +46,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=91008005",
   "uses": [
-   "taganay-expedition/day-3.jpg",
-   "meridian/gal-skazok-2.jpg"
+   "taganay-expedition/day-3.jpg"
   ]
  },
  {
@@ -68,8 +56,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=119573546",
   "uses": [
-   "taganay-expedition/day-4.jpg",
-   "meridian/gal-dalniy-2.jpg"
+   "taganay-expedition/day-4.jpg"
   ]
  },
  {
@@ -79,9 +66,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=106788473",
   "uses": [
-   "taganay-expedition/camp.jpg",
-   "meridian/h-priyut.jpg",
-   "meridian/gal-zima-2.jpg"
+   "taganay-expedition/camp.jpg"
   ]
  },
  {
@@ -101,8 +86,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=79401008",
   "uses": [
-   "taganay-expedition/mist.jpg",
-   "meridian/gal-dalniy-3.jpg"
+   "taganay-expedition/mist.jpg"
   ]
  },
  {
@@ -112,8 +96,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=106788484",
   "uses": [
-   "taganay-expedition/g-1.jpg",
-   "meridian/h-perya.jpg"
+   "taganay-expedition/g-1.jpg"
   ]
  },
  {
@@ -123,8 +106,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=48955890",
   "uses": [
-   "taganay-expedition/g-2.jpg",
-   "meridian/h-osen.jpg"
+   "taganay-expedition/g-2.jpg"
   ]
  },
  {
@@ -134,292 +116,7 @@
   "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
   "page": "https://commons.wikimedia.org/w/index.php?curid=40244591",
   "uses": [
-   "taganay-expedition/g-3.jpg",
-   "meridian/h-meteo.jpg",
-   "meridian/gal-dalniy-1.jpg"
-  ]
- },
- {
-  "title": "Долина сказок.jpg",
-  "author": "Vasily Iakovlev",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=79438297",
-  "uses": [
-   "belogorye/hero.jpg",
-   "meridian/gal-skazok-1.jpg"
-  ]
- },
- {
-  "title": "Откликной гребень, зима 2017.jpg",
-  "author": "Екатерина Гончаренко",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=59078812",
-  "uses": [
-   "belogorye/dir-1.jpg"
-  ]
- },
- {
-  "title": "Откликной гребень в снегу.jpg",
-  "author": "IlyaTravel",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=90995865",
-  "uses": [
-   "belogorye/dir-2.jpg"
-  ]
- },
- {
-  "title": "Панорама Национального парка Таганай. Вид с Откликного гребня, зима 2017.jpg",
-  "author": "Екатерина Гончаренко",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=59078753",
-  "uses": [
-   "belogorye/trail-1.jpg"
-  ]
- },
- {
-  "title": "Откликной с высоты.jpg",
-  "author": "Vasily Iakovlev",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=79438370",
-  "uses": [
-   "belogorye/trail-2.jpg"
-  ]
- },
- {
-  "title": "Баня приют Таганай.jpg",
-  "author": "Евгений Кудымов",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=106788474",
-  "uses": [
-   "belogorye/lodge.jpg",
-   "meridian/gal-zima-1.jpg"
-  ]
- },
- {
-  "title": "Зима на Таганае, реликтовые ели.jpg",
-  "author": "Holodno tut",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=79479362",
-  "uses": [
-   "belogorye/bg-school.jpg",
-   "meridian/gal-zima-3.jpg"
-  ]
- },
- {
-  "title": "Откликной гребень в метель.jpg",
-  "author": "Кочкин Владимир Геннадьевич",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=79163803",
-  "uses": [
-   "belogorye/bg-programs.jpg"
-  ]
- },
- {
-  "title": "Зима в Таганае..JPG",
-  "author": "Nicitacreater",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=39966125",
-  "uses": [
-   "belogorye/bg-how.jpg"
-  ]
- },
- {
-  "title": "Откликной гребень зимой.jpg",
-  "author": "Анатолий Козлов",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=59418824",
-  "uses": [
-   "belogorye/bg-reviews.jpg"
-  ]
- },
- {
-  "title": "Вечерний Откликной.jpg",
-  "author": "Nikolya",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=69681266",
-  "uses": [
-   "belogorye/bg-coaches.jpg"
-  ]
- },
- {
-  "title": "Хребет Таганай. Двуглавая сопка и Откликной гребень.jpg",
-  "author": "O.s.zlatoustovez",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=77728415",
-  "uses": [
-   "meridian/h-dvuglavaya.jpg"
-  ]
- },
- {
-  "title": "Таганай, Откликной Гребень.jpg",
-  "author": "Иван Лев",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=91327420",
-  "uses": [
-   "meridian/h-otklik.jpg"
-  ]
- },
- {
-  "title": "Таганай, Вид с Долины Сказок.jpg",
-  "author": "Fanatos",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=91443313",
-  "uses": [
-   "meridian/h-skazok.jpg"
-  ]
- },
- {
-  "title": "Вид на Откликной гребень и Круглицу.jpg",
-  "author": "Мария Стрельникова",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=107026294",
-  "uses": [
-   "meridian/h-kruglitsa.jpg"
-  ]
- },
- {
-  "title": "Far Taganay.JPG",
-  "author": "Elbow 93",
-  "license": "CC BY-SA 3.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/3.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=33983500",
-  "uses": [
-   "meridian/h-dalniy.jpg"
-  ]
- },
- {
-  "title": "На вершине Митькиных скал.jpg",
-  "author": "Евгений Кудымов",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=106788499",
-  "uses": [
-   "meridian/h-mitkiny.jpg"
-  ]
- },
- {
-  "title": "Г. Двуглавая Сопка, вид на хребет Средний Таганай, н.п. \"Таганай\".jpg",
-  "author": "Урал74",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=40244584",
-  "uses": [
-   "meridian/h-sredniy.jpg"
-  ]
- },
- {
-  "title": "Зимний Таганай.jpg",
-  "author": "Евгений774",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=106996387",
-  "uses": [
-   "meridian/h-zima.jpg"
-  ]
- },
- {
-  "title": "Двуглавая сопка 1.jpg",
-  "author": "Aleksandr kor",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=69875093",
-  "uses": [
-   "meridian/gal-dvuglavaya-1.jpg"
-  ]
- },
- {
-  "title": "Двуглавая сопка 3.jpg",
-  "author": "Aleksandr kor",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=69875094",
-  "uses": [
-   "meridian/gal-dvuglavaya-2.jpg"
-  ]
- },
- {
-  "title": "Двуглавая сопка 2.jpg",
-  "author": "Aleksandr kor",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=69875092",
-  "uses": [
-   "meridian/gal-dvuglavaya-3.jpg"
-  ]
- },
- {
-  "title": "Вид на Откликной гребень.jpg",
-  "author": "Арина Ахметова",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=91008002",
-  "uses": [
-   "meridian/gal-otklik-1.jpg"
-  ]
- },
- {
-  "title": "Откликной гребень, хребет Большой Таганай, н.п. \"Таганай\".jpg",
-  "author": "Урал74",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=40243596",
-  "uses": [
-   "meridian/gal-otklik-2.jpg"
-  ]
- },
- {
-  "title": "Г.Откликной гребень, хр. Большой Таганай.JPG",
-  "author": "Pilot art",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=39922088",
-  "uses": [
-   "meridian/gal-otklik-3.jpg"
-  ]
- },
- {
-  "title": "Вид на г.Круглица с г.Откликной гребень (хр.Большой Таганай).JPG",
-  "author": "Pilot art",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=39922333",
-  "uses": [
-   "meridian/gal-kruglitsa-1.jpg"
-  ]
- },
- {
-  "title": "Г.Откликной гребень (вид с г.Монблан).JPG",
-  "author": "Pilot art",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=39922328",
-  "uses": [
-   "meridian/gal-kruglitsa-2.jpg"
-  ]
- },
- {
-  "title": "Хребет Большой Таганай, вид с г. Двуглавая Сопка, н.п. \"Таганай\".jpg",
-  "author": "Урал74",
-  "license": "CC BY-SA 4.0",
-  "licenseUrl": "https://creativecommons.org/licenses/by-sa/4.0",
-  "page": "https://commons.wikimedia.org/w/index.php?curid=40244585",
-  "uses": [
-   "meridian/gal-kruglitsa-3.jpg"
+   "taganay-expedition/g-3.jpg"
   ]
  }
 ]

@@ -29,13 +29,13 @@ async function open(path, opts = {}) {
   const title1 = await page.locator(".hero__titles .swiper-slide-active span").first().innerText().catch(() => "");
   check("Меридиан: стрелка листает названия мест", title0 !== "" && title1 !== "" && title0 !== title1, `${title0} → ${title1}`);
 
-  await page.locator('.trip[data-route="dvuglavaya"]').scrollIntoViewIfNeeded();
-  await page.locator('.trip[data-route="dvuglavaya"]').click();
+  await page.locator('.trip[data-route="matterhorn"]').scrollIntoViewIfNeeded();
+  await page.locator('.trip[data-route="matterhorn"]').click();
   await page.waitForTimeout(1400);
   const modalOpen = await page.locator("[data-route-modal]").isVisible();
   const title = await page.locator("[data-rm-title]").innerText();
   const loaded = await page.$$eval("[data-rm-track] img", (imgs) => imgs.map((i) => i.complete && i.naturalWidth > 0));
-  check("Меридиан: карточка открывает модалку с маршрутом", modalOpen && /Двуглавая/.test(title), title);
+  check("Меридиан: карточка открывает модалку с маршрутом", modalOpen && /Маттерхорн/.test(title), title);
   check("Меридиан: в галерее маршрута 4 фото, и они загружены", loaded.length >= 4 && loaded.slice(0, 4).every(Boolean), JSON.stringify(loaded));
   await page.keyboard.press("Escape");
   await page.waitForTimeout(300);
@@ -82,7 +82,7 @@ async function open(path, opts = {}) {
   await page.locator("#stats").scrollIntoViewIfNeeded();
   await page.waitForTimeout(2600);
   const nums = await page.$$eval(".stat__num", (els) => els.map((e) => e.textContent.trim()));
-  check("Белогорье: цифры досчитываются", /1\s?178/.test(nums[0]) && /3/.test(nums[3]), nums.join(" | "));
+  check("Белогорье: цифры досчитываются", /28/.test(nums[0]) && /1[s ]?240/.test(nums[1]), nums.join(" | "));
   await page.locator("#name").fill("Тест");
   await page.locator("#phone").fill("+79001234567");
   await page.locator("#bookingForm button[type=submit]").click();

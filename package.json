@@ -8,7 +8,6 @@
     "test": "node --test",
     "serve": "node tools/serve.mjs",
     "photos": "node tools/fetch-photos.mjs",
-    "credits": "node tools/build-credits.mjs",
-    "meridian": "node tools/build-meridian.mjs"
+    "credits": "node tools/build-credits.mjs"
   }
 }

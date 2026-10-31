@@ -866,22 +866,22 @@ section { padding-block: clamp(72px, 10vw, 140px); }
 .about::before {
   background-image:
     linear-gradient(180deg, rgba(11,14,19,.9) 0%, rgba(11,14,19,.8) 42%, rgba(11,14,19,.95) 100%),
-    url("../img/h-dvuglavaya.jpg");
+    url("../img/hero/desk-ch-jungfrau.jpg");
 }
 .trips::before {
   background-image:
     linear-gradient(180deg, rgba(14,18,26,.93) 0%, rgba(14,18,26,.9) 50%, rgba(14,18,26,.97) 100%),
-    url("../img/h-kruglitsa.jpg");
+    url("../img/hero/desk-ch-gornergrat.jpg");
 }
 .format::before {
   background-image:
     linear-gradient(180deg, rgba(11,14,19,.92) 0%, rgba(11,14,19,.83) 45%, rgba(11,14,19,.95) 100%),
-    url("../img/h-sredniy.jpg");
+    url("../img/hero/desk-ch-lauterbrunnen.jpg");
 }
 .reviews::before {
   background-image:
     linear-gradient(180deg, rgba(14,18,26,.94) 0%, rgba(14,18,26,.9) 50%, rgba(14,18,26,.97) 100%),
-    url("../img/h-osen.jpg");
+    url("../img/hero/desk-ch-bachalpsee.jpg");
 }
 
 /* ================= модалка маршрута (2026-07-18) ================= */

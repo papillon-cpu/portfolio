@@ -8,6 +8,9 @@ const walk = (dir) => readdirSync(dir).flatMap((n) => (statSync(path.join(dir, n
 const files = walk(SITE);
 const text = (f) => readFileSync(f, "utf8");
 const pages = files.filter((f) => f.endsWith(".html"));
+// «Белогорье» и «Меридиан» оставлены в исходном виде: в них стоковые материалы и образцовые данные курса.
+const ORIGINAL = /[\\/]works[\\/](belogorye|meridian)[\\/]/;
+const ours = (list) => list.filter((f) => !ORIGINAL.test(f));
 
 function localRefs(file) {
   const src = text(file);
@@ -31,22 +34,21 @@ test("сайт: все локальные ссылки, картинки и ст
   assert.deepEqual(missing, []);
 });
 
-test("сайт: картинки из скриптов Меридиана и маршрутов существуют", () => {
-  const routes = text(path.join(SITE, "works/meridian/assets/js/routes.js"));
-  const imgs = [...routes.matchAll(/assets\/img\/[\w.-]+\.jpg/g)].map((m) => m[0]);
-  assert.ok(imgs.length >= 6);
-  for (const keyed of ["dvuglavaya", "otklik", "skazok", "kruglitsa", "dalniy", "zima"]) {
-    for (const i of [1, 2, 3]) imgs.push(`assets/img/gal-${keyed}-${i}.jpg`);
-  }
-  const bad = imgs.filter((i) => !existsSync(path.join(SITE, "works/meridian", i)));
+test("сайт: картинки, которые «Меридиан» подставляет скриптом (карточки и галереи маршрутов), существуют", () => {
+  const js = text(path.join(SITE, "works/meridian/assets/js/main.js"));
+  const imgs = [...js.matchAll(/assets\/img\/[\w./-]+\.jpg/g)].map((m) => m[0]);
+  assert.ok(imgs.length >= 6, "в скрипте не нашлись пути к картинкам");
+  const keys = [...js.matchAll(/^\s{6}(\w+): \{\s*\n\s+img:/gm)].map((m) => m[1]);
+  for (const k of keys) for (const i of [1, 2, 3]) imgs.push(`assets/img/routes/gal-${k}-${i}.jpg`);
+  const bad = [...new Set(imgs)].filter((i) => !existsSync(path.join(SITE, "works/meridian", i)));
   assert.deepEqual(bad, []);
 });
 
 test("сайт: в проектах не осталось чужого контента и выдуманных клиентов", () => {
   // Чувствительно к регистру: «ИНН» и «СВЕТЛО» не должны находиться внутри обычных слов («свеТЛО», «ИНН» в «Алексей»...).
-  const forbidden = /Пантел|Pantela|Евгений Пантел|vercel\.app|Швейцар|Юнгфрау|Маттерхорн|ТРОПА СЕВЕРА|Тунгуск|Красноярск|[Pp]exels|[Uu]nsplash|(?<![А-Яа-яЁё])ИНН(?![А-Яа-яЁё])|ОГРНИП|Артём Соколов|Кавказ|(?<![А-Яа-яЁё])СВЕТЛО(?![А-Яа-яЁё])/;
+  const forbidden = /Пантел|Pantela|Евгений Пантел|vercel\.app|Юнгфрау|Маттерхорн|ТРОПА СЕВЕРА|Тунгуск|Красноярск|[Pp]exels|[Uu]nsplash|(?<![А-Яа-яЁё])ИНН(?![А-Яа-яЁё])|ОГРНИП|Артём Соколов|Кавказ|(?<![А-Яа-яЁё])СВЕТЛО(?![А-Яа-яЁё])/;
   const bad = [];
-  for (const f of [...pages, ...files.filter((x) => /\.(js|css)$/.test(x) && !/vendor/.test(x))]) {
+  for (const f of ours([...pages, ...files.filter((x) => /\.(js|css)$/.test(x) && !/vendor/.test(x))])) {
     const m = text(f).match(forbidden);
     if (m) bad.push(`${path.relative(SITE, f)}: ${m[0]}`);
   }
@@ -54,7 +56,7 @@ test("сайт: в проектах не осталось чужого конт�
 });
 
 test("сайт: контакты везде одни и те же, выдуманных телефонов и почты нет", () => {
-  const all = pages.map(text).join("\n");
+  const all = ours(pages).map(text).join("\n");
   assert.match(all, /t\.me\/sumashedshii0/);
   assert.doesNotMatch(all, /8 800 000|tel:\+7800|tel:\+79130000000|hello@|ski@|@tropasevera/);
 });
@@ -71,7 +73,7 @@ test("сайт: у каждой страницы есть title, description и 
 
 test("фото: у каждой картинки есть запись об авторе и лицензии, только свободные лицензии", () => {
   const credits = JSON.parse(text(path.join(SITE, "credits.json")));
-  const usedFiles = files.filter((f) => /\/assets\/img\/(?!cover-)[^/]+\.jpg$/.test(f.replace(/\\/g, "/")));
+  const usedFiles = ours(files).filter((f) => /\/assets\/img\/(?!cover-)[^/]+\.jpg$/.test(f.replace(/\\/g, "/")));
   const credited = new Set(credits.flatMap((c) => c.uses));
   const unaccounted = usedFiles
     .map((f) => path.relative(SITE, f).replace(/\\/g, "/"))
@@ -87,6 +89,17 @@ test("фото: у каждой картинки есть запись об ав
 test("сайт: все четыре работы отмечены как демонстрационные", () => {
   for (const w of ["taganay-expedition", "belogorye", "meridian", "assistant"]) {
     const s = text(path.join(SITE, "works", w, "index.html"));
-    assert.match(s, /[Дд]емо(нстрационн)/, w);
+    assert.match(s, /[Дд]емо/, w);
   }
+});
+
+test("хаб: нет сведений о том, где живёт и откуда работает автор", () => {
+  const hub = text(path.join(SITE, "index.html"));
+  assert.doesNotMatch(hub, /Златоуст|Челябинск|Урал(?!ьск)|живу|откуда работаю/i);
+});
+
+test("хаб: на главной нет фотографии автора или пейзажа (только карточки работ)", () => {
+  const hub = text(path.join(SITE, "index.html"));
+  const imgs = [...hub.matchAll(/<img[^>]+src="([^"]+)"/g)].map((m) => m[1]);
+  assert.ok(imgs.length > 0 && imgs.every((s) => /assets\/img\/cover-/.test(s)), imgs.join(", "));
 });

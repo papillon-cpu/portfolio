@@ -238,7 +238,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 .school{position:relative;isolation:isolate;overflow:hidden;background:var(--navy-800)}
 .school::before{
   content:"";position:absolute;inset:0;z-index:-2;
-  background:url("../img/bg-school.jpg") center/cover no-repeat;
+  background:url("../img/school-bg.jpg") center/cover no-repeat;
   transform:scale(1.04);
 }
 .school::after{
@@ -285,9 +285,9 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   background-size:cover;background-position:center;background-repeat:no-repeat;opacity:.32}
 .photo-wash::after{content:"";position:absolute;inset:0;z-index:-1;
   background:linear-gradient(180deg,rgba(244,248,251,.55) 0%,rgba(244,248,251,.08) 34%,rgba(244,248,251,.4) 100%)}
-.programs.photo-wash::before{background-image:url("../img/bg-programs.jpg")}
-.how.photo-wash::before{background-image:url("../img/bg-how.jpg")}
-.reviews.photo-wash::before{background-image:url("../img/bg-reviews.jpg")}
+.programs.photo-wash::before{background-image:url("../img/programs-bg.jpg")}
+.how.photo-wash::before{background-image:url("../img/how-bg.jpg")}
+.reviews.photo-wash::before{background-image:url("../img/reviews-bg.jpg")}
 
 /* ============ PROGRAMS ============ */
 .programs{background:linear-gradient(180deg,#eef4f9,#f4f8fb)}
@@ -348,7 +348,7 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
 /* ============ COACHES ============ */
 .coaches{position:relative;isolation:isolate;overflow:hidden;background:var(--navy-800)}
 .coaches::before{content:"";position:absolute;inset:0;z-index:-2;
-  background:url("../img/bg-coaches.jpg") center/cover no-repeat;transform:scale(1.04)}
+  background:url("../img/coaches-bg.jpg") center/cover no-repeat;transform:scale(1.04)}
 .coaches::after{content:"";position:absolute;inset:0;z-index:-1;
   background:
     linear-gradient(90deg,rgba(7,15,26,.72) 0%,rgba(7,15,26,.32) 55%,rgba(7,15,26,.5) 100%),
@@ -472,9 +472,3 @@ button{font-family:inherit;cursor:pointer;border:none;background:none}
   *{animation-duration:.001ms !important;animation-iteration-count:1 !important;transition-duration:.001ms !important}
   .reveal{opacity:1;transform:none}
 }
-
-/* Фото вместо видео: медленный наезд */
-.hero__layer.hero__video { animation: bg-kb 30s ease-in-out infinite alternate; transform-origin: 50% 55%; }
-@keyframes bg-kb { from { transform: scale(1.02); } to { transform: scale(1.1); } }
-@media (prefers-reduced-motion: reduce) { .hero__layer.hero__video { animation: none; } }
-.footer__bottom a { color: inherit; text-decoration: underline; }

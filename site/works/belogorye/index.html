@@ -3,21 +3,22 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
-<title>БЕЛОГОРЬЕ — зимние выходы по Таганаю из Златоуста</title>
-<meta name="description" content="Зимние выходы по национальному парку «Таганай» из Златоуста: снегоступы, походы с ночёвкой в приюте, фототуры на рассвете. Малые группы, гид, помощь со снаряжением." />
+<title>БЕЛОГОРЬЕ — горнолыжный курорт и школа катания на сноуборде и лыжах</title>
+<meta name="description" content="Горнолыжный курорт БЕЛОГОРЬЕ: 28 трасс, современные подъёмники и школа катания на сноуборде и горных лыжах. Обучение с нуля для взрослых и детей, прокат снаряжения, сертифицированные инструкторы." />
 <meta name="theme-color" content="#0a1420" />
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%230a1420'/%3E%3Cpath d='M16 6 7 25h18L16 6Z' fill='%23ff7a3d'/%3E%3C/svg%3E" />
 
+<!-- Open Graph -->
 <meta property="og:type" content="website" />
-<meta property="og:title" content="БЕЛОГОРЬЕ — зимние выходы по Таганаю" />
-<meta property="og:description" content="Снегоступы, ночёвка в приюте и рассвет на Откликном гребне. Выход из Златоуста." />
-<meta property="og:image" content="assets/img/hero.jpg" />
+<meta property="og:title" content="БЕЛОГОРЬЕ — курорт и школа катания на сноуборде и лыжах" />
+<meta property="og:description" content="28 трасс, 45 км склонов и школа катания с нуля. Сноуборд и горные лыжи для взрослых и детей." />
+<meta property="og:image" content="assets/img/hero-poster.jpg" />
 
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@400;500;600;700;800&family=Oswald:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
 
-<link rel="stylesheet" href="assets/css/style.css?v=8" />
+<link rel="stylesheet" href="assets/css/style.css?v=6" />
 </head>
 <body>
 
@@ -32,15 +33,16 @@
     </a>
 
     <nav class="nav" id="nav" aria-label="Основная навигация">
-      <a href="#school">Форматы</a>
-      <a href="#programs">Выходы</a>
-      <a href="#trails">Маршруты</a>
-      <a href="#rental">Снаряжение</a>
-      <a href="#coaches">Принципы</a>
-      <a href="#contact">Запись</a>
+      <a href="#school">Обучение</a>
+      <a href="#programs">Программы</a>
+      <a href="#trails">Трассы</a>
+      <a href="#rental">Прокат</a>
+      <a href="#coaches">Инструкторы</a>
+      <a href="#contact">Контакты</a>
     </nav>
 
     <div class="header__cta">
+      <a href="tel:+78000000000" class="header__phone">8 800 000-00-00</a>
       <a href="#booking" class="btn btn--sm btn--primary">Записаться</a>
     </div>
 
@@ -53,24 +55,29 @@
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="hero__stage">
-    <img class="hero__layer hero__video is-active" id="heroImg" src="assets/img/hero.jpg" alt="Заснеженная Долина сказок на закате, Таганай" fetchpriority="high" />
+    <video class="hero__layer hero__video is-active" id="heroVideo"
+           autoplay muted loop playsinline preload="auto"
+           poster="assets/img/ai-hero-poster.jpg">
+      <source src="assets/video/hero-ai-snowboard-2k.mp4" type="video/mp4" media="(min-width: 900px)" />
+      <source src="assets/video/hero-ai-snowboard-1080.mp4" type="video/mp4" />
+    </video>
     <div class="hero__scrim"></div>
     <div class="hero__grain" aria-hidden="true"></div>
   </div>
 
   <div class="hero__ui">
     <div class="wrap hero__top">
-      <p class="hero__eyebrow"><span class="dot"></span> Зимние выходы по Таганаю</p>
-      <p class="hero__desc">Для тех, кто хочет увидеть Урал зимой, и для тех, кому нужно просто выйти из города на тишину.</p>
+      <p class="hero__eyebrow"><span class="dot"></span> Школа сноуборда и горных лыж</p>
+      <p class="hero__desc">Для тех, кто хочет покорить большую гору&nbsp;— и для тех, кто просто хочет уверенно спускаться по своему склону.</p>
     </div>
 
     <div class="wrap hero__bottom">
       <div class="hero__headline">
-        <h1 class="hero__mega"><span><i>Зима</i></span><span><i>на гребне</i></span></h1>
-        <p class="hero__lead">Снегоступы, ночёвка в приюте и рассвет на Откликном гребне. Выход из Златоуста, малая группа, гид и разбор снаряжения до старта.</p>
+        <h1 class="hero__mega"><span><i>Научим</i></span><span><i>кататься</i></span></h1>
+        <p class="hero__lead">С первого спуска. Сноуборд и горные лыжи с нуля — для взрослых и детей, с сертифицированными инструкторами и своим прокатом.</p>
         <div class="hero__actions">
-          <a href="#booking" class="btn btn--primary btn--lg">Записаться на выход</a>
-          <a href="#programs" class="btn btn--ghost btn--lg">Выходы</a>
+          <a href="#booking" class="btn btn--primary btn--lg">Записаться на обучение</a>
+          <a href="#programs" class="btn btn--ghost btn--lg">Программы</a>
         </div>
       </div>
     </div>
@@ -80,58 +87,58 @@
 <!-- ============ MARQUEE ============ -->
 <div class="marquee" aria-hidden="true">
   <div class="marquee__track">
-    <span>Снегоступы</span><i>✦</i><span>Откликной гребень</span><i>✦</i><span>Двуглавая сопка</span><i>✦</i><span>Ночёвка в приюте</span><i>✦</i><span>Рассвет на хребте</span><i>✦</i><span>Фотовыходы</span><i>✦</i>
-    <span>Снегоступы</span><i>✦</i><span>Откликной гребень</span><i>✦</i><span>Двуглавая сопка</span><i>✦</i><span>Ночёвка в приюте</span><i>✦</i><span>Рассвет на хребте</span><i>✦</i><span>Фотовыходы</span><i>✦</i>
+    <span>Сноуборд</span><i>✦</i><span>Горные лыжи</span><i>✦</i><span>Обучение с нуля</span><i>✦</i><span>Детская школа</span><i>✦</i><span>Фрирайд</span><i>✦</i><span>Прокат снаряжения</span><i>✦</i>
+    <span>Сноуборд</span><i>✦</i><span>Горные лыжи</span><i>✦</i><span>Обучение с нуля</span><i>✦</i><span>Детская школа</span><i>✦</i><span>Фрирайд</span><i>✦</i><span>Прокат снаряжения</span><i>✦</i>
   </div>
 </div>
 
 <!-- ============ STATS ============ -->
 <section class="stats" id="stats">
   <div class="wrap stats__grid">
-    <div class="stat reveal"><div class="stat__num" data-count="1178" data-suffix=" м">0</div><div class="stat__label">гора Круглица, высшая точка парка (около)</div></div>
-    <div class="stat reveal"><div class="stat__num" data-count="1155" data-suffix=" м">0</div><div class="stat__label">Откликной гребень (около)</div></div>
-    <div class="stat reveal"><div class="stat__num" data-count="1040" data-suffix=" м">0</div><div class="stat__label">Двуглавая сопка (около)</div></div>
-    <div class="stat reveal"><div class="stat__num" data-count="3" data-suffix=" км">0</div><div class="stat__label">от вокзала Златоуста до входа в парк (около)</div></div>
+    <div class="stat reveal"><div class="stat__num" data-count="28">0</div><div class="stat__label">трасс — зелёные, синие, красные и чёрные</div></div>
+    <div class="stat reveal"><div class="stat__num" data-count="1240" data-suffix=" м">0</div><div class="stat__label">перепад высот с панорамой на хребет</div></div>
+    <div class="stat reveal"><div class="stat__num" data-count="40" data-suffix="+">0</div><div class="stat__label">инструкторов с сертификацией НЛИ / ISIA</div></div>
+    <div class="stat reveal"><div class="stat__num" data-count="12000" data-suffix="+">0</div><div class="stat__label">учеников встали на склон вместе с нами</div></div>
   </div>
 </section>
 
-<!-- ============ FORMATS ============ -->
+<!-- ============ DIRECTIONS / SCHOOL ============ -->
 <section class="section school" id="school">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Форматы</p>
-      <h2 class="section__title">Два способа увидеть<br />зимний Таганай.</h2>
-      <p class="section__sub">Выберите короткий выход на день или поход с ночёвкой. Темп, маршрут и снаряжение подберём под ваш опыт и прогноз погоды.</p>
+      <p class="eyebrow">Школа катания</p>
+      <h2 class="section__title">Два направления.<br />Один идеальный склон.</h2>
+      <p class="section__sub">Выберите доску или лыжи — программу, темп и инструктора подберём под вас. Первое занятие проходит на пологой учебной трассе с подъёмником-ленточкой.</p>
     </header>
 
     <div class="dirs">
       <article class="dir reveal">
-        <div class="dir__media"><img src="assets/img/dir-1.jpg" alt="Откликной гребень зимой, 2017" loading="lazy" /></div>
+        <div class="dir__media"><img src="assets/img/snowboard-card.jpg" alt="Райдер на сноуборде спускается по солнечному склону" loading="lazy" /></div>
         <div class="dir__body">
-          <span class="dir__tag">Формат 01</span>
-          <h3>Снегоступы · 1 день</h3>
-          <p>Выход из Златоуста утром и возвращение вечером. Для тех, кто в первый раз идёт по зимнему парку.</p>
+          <span class="dir__tag">Направление 01</span>
+          <h3>Сноуборд</h3>
+          <p>Стойка, баланс, первые повороты и уверенное торможение. Через 3–4 занятия вы самостоятельно спускаетесь по синей трассе.</p>
           <ul class="ticks">
-            <li>Разбор одежды и снаряжения до старта</li>
-            <li>Заснеженная тропа и привал с горячим чаем</li>
-            <li>Вид на хребет с первых открытых мест</li>
+            <li>Правильная стойка и работа кантами</li>
+            <li>Повороты «листопадом» и резаный поворот</li>
+            <li>Подъёмники: бугель, кресло, гондола</li>
           </ul>
-          <a href="#programs" class="link-arrow">Подробнее о выходах <span>→</span></a>
+          <a href="#programs" class="link-arrow">Программы сноуборда <span>→</span></a>
         </div>
       </article>
 
       <article class="dir reveal">
-        <div class="dir__media"><img src="assets/img/dir-2.jpg" alt="Откликной гребень в снегу" loading="lazy" /></div>
+        <div class="dir__media"><img src="assets/img/ski-action.jpg" alt="Лыжник спускается по подготовленной трассе" loading="lazy" /></div>
         <div class="dir__body">
-          <span class="dir__tag">Формат 02</span>
-          <h3>Поход с ночёвкой · 2 дня</h3>
-          <p>Выходим выше леса, ночуем в приюте и встречаем рассвет на гребне. Для тех, кто уже ходил в горы или готов к этому.</p>
+          <span class="dir__tag">Направление 02</span>
+          <h3>Горные лыжи</h3>
+          <p>От «плуга» до параллельных лыж. Ставим технику, которая не рассыпается на скорости и на крутых участках.</p>
           <ul class="ticks">
-            <li>Ночёвка в приюте или палатке по прогнозу</li>
-            <li>Подъём к гребню и фото на рассвете</li>
-            <li>Запасной день в плане на погоду</li>
+            <li>Плуг, управление скоростью, безопасное падение</li>
+            <li>Параллельное ведение и карвинг</li>
+            <li>Катание по буграм и первый чёрный склон</li>
           </ul>
-          <a href="#programs" class="link-arrow">Подробнее о выходах <span>→</span></a>
+          <a href="#programs" class="link-arrow">Программы лыж <span>→</span></a>
         </div>
       </article>
     </div>
@@ -142,75 +149,75 @@
 <section class="section programs photo-wash" id="programs">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Выходы и цены</p>
-      <h2 class="section__title">Выберите свой формат</h2>
-      <p class="section__sub">Группа до 8 человек. Цены и даты в этой версии условные, это демонстрационный проект. В боевой версии подставляются настоящие.</p>
+      <p class="eyebrow">Программы и цены</p>
+      <h2 class="section__title">Выберите свой уровень</h2>
+      <p class="section__sub">Занятия индивидуально или в мини-группе до 4 человек. Абонемент выгоднее — цена за занятие ниже, снаряжение и подъёмник для учебной зоны включены.</p>
     </header>
 
     <div class="cards">
       <article class="card reveal">
         <div class="card__top">
-          <span class="card__lvl">Первый раз</span>
-          <h3>Зимний выход на день</h3>
-          <p class="card__desc">Никогда не ходили по снегу в горах? Начнём с короткой тропы и подробного разбора снаряжения.</p>
+          <span class="card__lvl">Уровень 0 → 1</span>
+          <h3>Первый спуск</h3>
+          <p class="card__desc">Никогда не стояли на доске или лыжах? Начнём с самого начала — мягко и без страха.</p>
         </div>
-        <div class="card__price"><span>от</span> 3 900 ₽ <small>/ человек, условно</small></div>
+        <div class="card__price"><span>от</span> 2 900 ₽ <small>/ занятие 1 ч</small></div>
         <ul class="ticks ticks--sm">
-          <li>Гид и план выхода на день</li>
-          <li>Горячий чай на привале</li>
-          <li>Возвращение в Златоуст вечером</li>
+          <li>Разбор снаряжения и экипировки</li>
+          <li>Баланс, стойка, первое скольжение</li>
+          <li>Учебная трасса + ленточный подъёмник</li>
         </ul>
         <a href="#booking" class="btn btn--block btn--outline">Записаться</a>
       </article>
 
       <article class="card card--featured reveal">
-        <span class="card__badge">Выбор гида</span>
+        <span class="card__badge">Хит</span>
         <div class="card__top">
-          <span class="card__lvl">Опыт ходьбы</span>
-          <h3>Выходные на гребне</h3>
-          <p class="card__desc">Два дня, ночёвка и рассвет на Откликном гребне. Главный зимний формат клуба.</p>
+          <span class="card__lvl">Уровень 1 → 3</span>
+          <h3>Абонемент «Сезон»</h3>
+          <p class="card__desc">5 занятий с личным инструктором — оптимальный путь до уверенного катания по синим и красным.</p>
         </div>
-        <div class="card__price"><span>от</span> 9 900 ₽ <small>/ человек, условно</small></div>
+        <div class="card__price"><span>от</span> 12 500 ₽ <small>/ 5 занятий</small></div>
         <ul class="ticks ticks--sm">
-          <li>Ночёвка в приюте или палатке</li>
-          <li>Подъём к гребню и выход на рассвет</li>
-          <li>Запасной день на погоду в плане</li>
-          <li>Разбор снаряжения до старта</li>
+          <li>Персональный план и видеоразбор техники</li>
+          <li>Повороты, скорость, работа кантами</li>
+          <li>Прокат снаряжения включён</li>
+          <li>Скипасс учебной зоны включён</li>
         </ul>
-        <a href="#booking" class="btn btn--block btn--primary">Выбрать выход</a>
+        <a href="#booking" class="btn btn--block btn--primary">Выбрать абонемент</a>
       </article>
 
       <article class="card reveal">
         <div class="card__top">
-          <span class="card__lvl">Семьи</span>
-          <h3>Семейный выход</h3>
-          <p class="card__desc">Короткая тропа до первых видов и обратно. Для родителей с детьми, которые уже ходят пешком.</p>
+          <span class="card__lvl">6 → 14 лет</span>
+          <h3>Детская школа</h3>
+          <p class="card__desc">Игровой формат, мягкая экипировка и инструкторы, которые умеют находить общий язык с детьми.</p>
         </div>
-        <div class="card__price"><span>от</span> 2 900 ₽ <small>/ человек, условно</small></div>
+        <div class="card__price"><span>от</span> 2 400 ₽ <small>/ занятие 50 мин</small></div>
         <ul class="ticks ticks--sm">
-          <li>Короткий маршрут без перепадов высоты</li>
-          <li>Игровые остановки для детей</li>
-          <li>Возвращение до темноты</li>
+          <li>Отдельная безопасная учебная зона</li>
+          <li>Группы по возрасту и уровню</li>
+          <li>Фото и отчёт родителям после занятия</li>
         </ul>
         <a href="#booking" class="btn btn--block btn--outline">Записаться</a>
       </article>
 
       <article class="card reveal">
         <div class="card__top">
-          <span class="card__lvl">Фото</span>
-          <h3>Рассвет на хребте</h3>
-          <p class="card__desc">Выход затемно, чтобы встретить рассвет с видом на хребты. Для тех, кто снимает или хочет увидеть.</p>
+          <span class="card__lvl">Уровень 3 → 5</span>
+          <h3>Фрирайд &amp; продвинутый</h3>
+          <p class="card__desc">Карвинг, бугры, целина и первый выход за пределы трасс — с гидом и лавинной подготовкой.</p>
         </div>
-        <div class="card__price"><span>от</span> 4 900 ₽ <small>/ человек, условно</small></div>
+        <div class="card__price"><span>от</span> 4 500 ₽ <small>/ занятие 1.5 ч</small></div>
         <ul class="ticks ticks--sm">
-          <li>Выход с налобными фонарями</li>
-          <li>Время на съёмку на смотровой точке</li>
-          <li>Горячий завтрак на хребте</li>
+          <li>Техника на крутых и разбитых склонах</li>
+          <li>Основы фрирайда и безопасности</li>
+          <li>Сопровождение сертифицированным гидом</li>
         </ul>
         <a href="#booking" class="btn btn--block btn--outline">Записаться</a>
       </article>
     </div>
-    <p class="programs__note reveal">Не знаете, что выбрать? Оставьте заявку, и мы подберём формат под ваш опыт и прогноз на ближайшие выходные.</p>
+    <p class="programs__note reveal">Не знаете, что выбрать? Оставьте заявку — подберём программу по вашему опыту и целям. Первая консультация бесплатна.</p>
   </div>
 </section>
 
@@ -218,94 +225,94 @@
 <section class="section how photo-wash">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Как проходит выход</p>
-      <h2 class="section__title">Четыре шага от заявки до гребня</h2>
+      <p class="eyebrow">Как проходит обучение</p>
+      <h2 class="section__title">Четыре шага до уверенного склона</h2>
     </header>
     <div class="steps">
-      <div class="step reveal"><span class="step__n">01</span><h4>Заявка и подбор</h4><p>Вы оставляете заявку, мы уточняем опыт, возраст группы и желаемый формат, предлагаем даты.</p></div>
-      <div class="step reveal"><span class="step__n">02</span><h4>Снаряжение</h4><p>Присылаем список вещей и помогаем собраться: что взять, что можно взять напрокат, что оставить дома.</p></div>
-      <div class="step reveal"><span class="step__n">03</span><h4>Выход</h4><p>Встреча в Златоусте, инструктаж и проход по плану. Решение по маршруту принимаем по погоде на месте.</p></div>
-      <div class="step reveal"><span class="step__n">04</span><h4>Возвращение</h4><p>Спуск до заката, горячий чай и фотографии группы после выхода.</p></div>
+      <div class="step reveal"><span class="step__n">01</span><h4>Заявка и подбор</h4><p>Оставляете заявку, мы уточняем опыт и цель, подбираем инструктора и удобное время.</p></div>
+      <div class="step reveal"><span class="step__n">02</span><h4>Экипировка</h4><p>Выдаём снаряжение в прокате, помогаем подобрать размер и настроить крепления.</p></div>
+      <div class="step reveal"><span class="step__n">03</span><h4>Занятие</h4><p>Учебная зона, отработка техники и первый спуск. Всё в комфортном для вас темпе.</p></div>
+      <div class="step reveal"><span class="step__n">04</span><h4>Прогресс</h4><p>Видеоразбор, план на следующее занятие и переход на более сложные трассы.</p></div>
     </div>
   </div>
 </section>
 
-<!-- ============ ROUTES ============ -->
+<!-- ============ TRAILS ============ -->
 <section class="section trails" id="trails">
   <div class="wrap trails__grid">
     <div class="trails__text reveal">
-      <p class="eyebrow">Зимние маршруты</p>
-      <h2 class="section__title">Тропы для любого уровня</h2>
-      <p class="section__sub">Таганай зимой остаётся доступным по знакомым тропам. Меняется только темп: светлого времени меньше, снега больше, а погода на хребте решает всё.</p>
+      <p class="eyebrow">Склоны курорта</p>
+      <h2 class="section__title">Трассы для любого уровня</h2>
+      <p class="section__sub">45 км подготовленных склонов, вечернее катание с подсветкой и современная система подъёмников без очередей.</p>
       <ul class="levels">
-        <li><span class="lv lv--green"></span><b>Лёгкие</b><small>Короткая тропа в лесу до первых открытых мест</small></li>
-        <li><span class="lv lv--blue"></span><b>Средние</b><small>Двуглавая сопка по лестнице, вид на Откликной гребень</small></li>
-        <li><span class="lv lv--red"></span><b>Сложные</b><small>Откликной гребень и привал под скалами</small></li>
-        <li><span class="lv lv--black"></span><b>Длинные</b><small>Дальний Таганай и бывшая метеостанция, только при устойчивой погоде</small></li>
+        <li><span class="lv lv--green"></span><b>Зелёные — 8 трасс</b><small>Учебные и пологие — для первых спусков</small></li>
+        <li><span class="lv lv--blue"></span><b>Синие — 10 трасс</b><small>Для уверенного начинающего</small></li>
+        <li><span class="lv lv--red"></span><b>Красные — 7 трасс</b><small>Крутые участки и скорость</small></li>
+        <li><span class="lv lv--black"></span><b>Чёрные — 3 трассы</b><small>Для продвинутых и фрирайда</small></li>
       </ul>
       <div class="trails__facts">
-        <div><b>1–2 дня</b><span>обычная длина выхода</span></div>
-        <div><b>до 8</b><span>человек в группе</span></div>
-        <div><b>на рассвете</b><span>старт самых длинных выходов</span></div>
+        <div><b>1 240 м</b><span>перепад высот</span></div>
+        <div><b>6</b><span>подъёмников</span></div>
+        <div><b>до 22:00</b><span>вечернее катание</span></div>
       </div>
     </div>
     <div class="trails__media reveal">
-      <img src="assets/img/trail-1.jpg" alt="Панорама Таганая с Откликного гребня зимой" loading="lazy" />
-      <img src="assets/img/trail-2.jpg" alt="Откликной гребень с высоты зимой" loading="lazy" />
+      <img src="assets/img/lift-trees.jpg" alt="Кресельный подъёмник над заснеженным лесом" loading="lazy" />
+      <img src="assets/img/ski-pov.jpg" alt="Вид от первого лица на спуск по трассе" loading="lazy" />
     </div>
   </div>
 </section>
 
-<!-- ============ GEAR ============ -->
+<!-- ============ RENTAL ============ -->
 <section class="section rental" id="rental">
   <div class="wrap rental__grid">
     <div class="rental__media reveal">
-      <img src="assets/img/lodge.jpg" alt="Горный приют на Таганае зимой, светятся окна" loading="lazy" />
+      <img src="assets/img/rental-lodge.jpg" alt="Снаряжение у проката курорта" loading="lazy" />
     </div>
     <div class="rental__text reveal">
-      <p class="eyebrow">Снаряжение</p>
-      <h2 class="section__title">Что взять и что решаем мы</h2>
-      <p class="section__sub">Зимой мелочи решают всё. Мы помогаем собрать личный набор и заранее говорим, что и зачем брать.</p>
+      <p class="eyebrow">Прокат снаряжения</p>
+      <h2 class="section__title">Всё для катания — на месте</h2>
+      <p class="section__sub">Свежий сервисный парк: доски, лыжи, ботинки, шлемы и защита. Настроим крепления под вес и уровень, поможем с размером.</p>
       <div class="rental__list">
-        <div class="rental__row"><span>Обувь и носки для снега</span><b>свои</b></div>
-        <div class="rental__row"><span>Мембранная куртка и тёплый слой</span><b>свои</b></div>
-        <div class="rental__row"><span>Снегоступы</span><b>по запросу</b></div>
-        <div class="rental__row"><span>Треккинговые палки</span><b>по запросу</b></div>
-        <div class="rental__row"><span>Термос, горячий чай, аптечка группы</span><b>включено</b></div>
+        <div class="rental__row"><span>Комплект сноуборд (доска + ботинки)</span><b>от 1 500 ₽ / день</b></div>
+        <div class="rental__row"><span>Комплект горные лыжи</span><b>от 1 400 ₽ / день</b></div>
+        <div class="rental__row"><span>Ботинки отдельно</span><b>от 600 ₽ / день</b></div>
+        <div class="rental__row"><span>Шлем и защита</span><b>от 400 ₽ / день</b></div>
+        <div class="rental__row"><span>Детский комплект</span><b>от 900 ₽ / день</b></div>
       </div>
-      <p class="rental__note">В демонстрационной версии условия условные. В боевой они заменяются реальными.</p>
+      <p class="rental__note">Для учеников школы по абонементу «Сезон» прокат учебного комплекта — бесплатно.</p>
     </div>
   </div>
 </section>
 
-<!-- ============ PRINCIPLES ============ -->
+<!-- ============ COACHES ============ -->
 <section class="section coaches" id="coaches">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Принципы выхода</p>
-      <h2 class="section__title">Как мы ходим по горам зимой</h2>
-      <p class="section__sub">Это не набор громких обещаний, а правила маршрута, которые мы не нарушаем ради красивого кадра.</p>
+      <p class="eyebrow">Инструкторы</p>
+      <h2 class="section__title">Ставят технику, а не страх</h2>
+      <p class="section__sub">Каждый инструктор проходит аттестацию и медиатренинг. Мы не «катаем клиента», а объясняем так, чтобы вы понимали, что и зачем делаете.</p>
     </header>
     <div class="coach-grid">
-      <article class="coach reveal"><div class="coach__ava" data-mono="01"></div><h4>Темп группы</h4><span class="coach__role">Идём не быстрее слабого</span><p>Скорость определяет самый медленный участник. Это правило не обсуждается.</p></article>
-      <article class="coach reveal"><div class="coach__ava" data-mono="02"></div><h4>Погода решает</h4><span class="coach__role">Маршрут гибкий</span><p>Если прогноз плохой, мы переносим выход или меняем маршрут. Гребень никуда не денется.</p></article>
-      <article class="coach reveal"><div class="coach__ava" data-mono="03"></div><h4>Запас по времени</h4><span class="coach__role">Вернуться до темноты</span><p>Зимой светлого времени мало, поэтому разворот назначаем заранее и держимся его.</p></article>
-      <article class="coach reveal"><div class="coach__ava" data-mono="04"></div><h4>Бережно к парку</h4><span class="coach__role">Правила нацпарка</span><p>Идём по тропам, мусор уносим с собой, огонь разводим только там, где это разрешено.</p></article>
+      <article class="coach reveal"><div class="coach__ava" data-mono="АК"></div><h4>Артём Ковалёв</h4><span class="coach__role">Ст. инструктор — сноуборд</span><p>14 сезонов, сертификат НЛИ. Специализация — постановка с нуля и фрирайд.</p></article>
+      <article class="coach reveal"><div class="coach__ava" data-mono="ЕС"></div><h4>Елена Соловьёва</h4><span class="coach__role">Инструктор — горные лыжи</span><p>ISIA level 2. Работает со взрослыми, которые «боятся скорости».</p></article>
+      <article class="coach reveal"><div class="coach__ava" data-mono="МР"></div><h4>Марат Рахимов</h4><span class="coach__role">Инструктор — дети</span><p>Детский тренер, психолог. Умеет поставить на склон даже самых осторожных.</p></article>
+      <article class="coach reveal"><div class="coach__ava" data-mono="ДВ"></div><h4>Дарья Волкова</h4><span class="coach__role">Гид — фрирайд</span><p>Лавинная подготовка, сопровождение за пределами трасс и бэккантри.</p></article>
     </div>
   </div>
 </section>
 
-<!-- ============ WINTER NOTES ============ -->
+<!-- ============ REVIEWS ============ -->
 <section class="section reviews photo-wash">
   <div class="wrap">
     <header class="section__head reveal">
-      <p class="eyebrow">Что важно знать</p>
-      <h2 class="section__title">Три вещи о зимнем Таганае</h2>
+      <p class="eyebrow">Отзывы учеников</p>
+      <h2 class="section__title">4.9 из 5 — по 2 300 отзывам</h2>
     </header>
     <div class="review-grid">
-      <blockquote class="review reveal"><div class="stars">❄</div><p>«На гребне холоднее и ветреннее, чем в городе. Одежда, которой хватает на улице Златоуста, наверху может оказаться тонкой».</p><footer>— Одежда</footer></blockquote>
-      <blockquote class="review reveal"><div class="stars">☀</div><p>«Светлый день зимой короткий. Старт на рассвете и заранее назначенное время разворота делают выход спокойным».</p><footer>— Время</footer></blockquote>
-      <blockquote class="review reveal"><div class="stars">✦</div><p>«Снег прячет тропу и камни. Поэтому в первый раз лучше идти с гидом, а не по следам в телефоне».</p><footer>— Тропа</footer></blockquote>
+      <blockquote class="review reveal"><div class="stars">★★★★★</div><p>«Впервые встала на сноуборд в 34 года и думала, что это не для меня. За абонемент „Сезон“ спокойно катаюсь по синим. Инструктор — золото.»</p><footer>— Ольга, сноуборд с нуля</footer></blockquote>
+      <blockquote class="review reveal"><div class="stars">★★★★★</div><p>«Отдали сына 7 лет в детскую школу. Через неделю сам съезжает и не хочет уходить со склона. Отчёты с фото после каждого занятия — приятная мелочь.»</p><footer>— Дмитрий, родитель</footer></blockquote>
+      <blockquote class="review reveal"><div class="stars">★★★★★</div><p>«Катаюсь 10 лет, взял пару занятий по карвингу — техника изменилась радикально. Видеоразбор реально показывает ошибки.»</p><footer>— Илья, продвинутый уровень</footer></blockquote>
     </div>
   </div>
 </section>
@@ -314,18 +321,18 @@
 <section class="section booking" id="booking">
   <div class="wrap booking__grid">
     <div class="booking__info reveal">
-      <p class="eyebrow eyebrow--light">Запись на выход</p>
-      <h2 class="section__title">Забронируйте место в группе</h2>
-      <p class="section__sub">Оставьте контакты, и мы напишем в течение дня: подберём дату, формат и расскажем, что взять. В демонстрационной версии форма ничего не отправляет.</p>
+      <p class="eyebrow eyebrow--light">Запись на обучение</p>
+      <h2 class="section__title">Забронируйте первое занятие</h2>
+      <p class="section__sub">Оставьте контакты — перезвоним в течение 15 минут, подберём программу, инструктора и удобное время. Консультация бесплатна.</p>
       <ul class="booking__benefits">
-        <li>✦ Малая группа, до 8 человек</li>
-        <li>✦ Разбор снаряжения до выхода</li>
-        <li>✦ Запасной день на погоду</li>
-        <li>✦ Перенос выхода без штрафа, если погода плохая</li>
+        <li>✦ Сертифицированные инструкторы</li>
+        <li>✦ Снаряжение и учебный подъёмник включены</li>
+        <li>✦ Индивидуально или в мини-группе</li>
+        <li>✦ Гибкий перенос и отмена занятий</li>
       </ul>
       <div class="booking__contacts">
-        <a href="../../index.html">Портфолио Никиты Кутылова</a>
-        <a href="../../credits.html">Источники фото</a>
+        <a href="tel:+78000000000">8 800 000-00-00</a>
+        <a href="mailto:ski@belogorye.ru">ski@belogorye.ru</a>
       </div>
     </div>
 
@@ -340,60 +347,60 @@
       </div>
       <div class="field field--row">
         <div>
-          <label for="discipline">Формат</label>
+          <label for="discipline">Направление</label>
           <select id="discipline" name="discipline">
-            <option>Зимний выход на день</option>
-            <option>Выходные на гребне</option>
-            <option>Семейный выход</option>
-            <option>Рассвет на хребте</option>
+            <option>Сноуборд</option>
+            <option>Горные лыжи</option>
+            <option>Ещё не решил(а)</option>
           </select>
         </div>
         <div>
-          <label for="level">Опыт</label>
+          <label for="level">Уровень</label>
           <select id="level" name="level">
-            <option>Первый раз</option>
-            <option>Ходил(а) в горы летом</option>
-            <option>Ходил(а) зимой</option>
-            <option>С детьми</option>
+            <option>С нуля</option>
+            <option>Начинающий</option>
+            <option>Уверенный</option>
+            <option>Продвинутый</option>
+            <option>Ребёнок</option>
           </select>
         </div>
       </div>
       <button type="submit" class="btn btn--primary btn--block btn--lg">Отправить заявку</button>
       <p class="form__note">Нажимая кнопку, вы соглашаетесь с обработкой персональных данных.</p>
-      <p class="form__ok" id="formOk" hidden>Спасибо! Это демо, но в боевой версии заявка ушла бы в Telegram.</p>
+      <p class="form__ok" id="formOk" hidden>Спасибо! Заявка принята — перезвоним в течение 15 минут.</p>
     </form>
   </div>
 </section>
 
 <!-- ============ FOOTER ============ -->
-<footer class="footer" id="contact">
+<footer class="footer">
   <div class="wrap footer__inner">
     <div class="footer__brand">
       <span class="brand__mark" aria-hidden="true">
         <svg viewBox="0 0 32 32" width="24" height="24" fill="none"><path d="M16 3 5 27h22L16 3Z" fill="currentColor"/><path d="m11.4 18.7 2.6-2.4 2.1 1.9 2.3-3.1 4.4 9.4H8.6l2.8-5.7Z" fill="#0a1420"/></svg>
       </span>
       <span class="brand__text">БЕЛОГОРЬЕ</span>
-      <p>Зимние выходы по национальному парку «Таганай». Выход из Златоуста.</p>
+      <p>Горнолыжный курорт и школа катания на сноуборде и горных лыжах.</p>
     </div>
     <nav class="footer__nav" aria-label="Разделы">
-      <a href="#school">Форматы</a>
-      <a href="#programs">Выходы</a>
-      <a href="#trails">Маршруты</a>
-      <a href="#rental">Снаряжение</a>
-      <a href="#coaches">Принципы</a>
+      <a href="#school">Обучение</a>
+      <a href="#programs">Программы</a>
+      <a href="#trails">Трассы</a>
+      <a href="#rental">Прокат</a>
+      <a href="#coaches">Инструкторы</a>
     </nav>
     <div class="footer__contacts">
-      <a href="../../index.html">Портфолио Никиты Кутылова</a>
-      <a href="../../credits.html">Источники фото</a>
-      <span>Златоуст, Челябинская область</span>
+      <a href="tel:+78000000000">8 800 000-00-00</a>
+      <a href="mailto:ski@belogorye.ru">ski@belogorye.ru</a>
+      <span>Курорт БЕЛОГОРЬЕ, Кавказ — 08:00 – 22:00</span>
     </div>
   </div>
   <div class="wrap footer__bottom">
     <span>© 2026 БЕЛОГОРЬЕ. Демонстрационный проект.</span>
-    <span>Фото: Wikimedia Commons, авторы и лицензии — на странице <a href="../../credits.html">«Источники фото»</a>.</span>
+    <span>Видео и фото — стоковые материалы (Pexels).</span>
   </div>
 </footer>
 
-<script src="assets/js/main.js?v=3"></script>
+<script src="assets/js/main.js?v=2"></script>
 </body>
 </html>

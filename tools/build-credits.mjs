@@ -21,8 +21,8 @@ writeFileSync(
 <html lang="ru"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Источники фотографий — портфолио Никиты Кутылова</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Lora:wght@500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="assets/hub.css?v=1">
+<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Manrope:wght@700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/hub.css?v=2">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2316181a'/%3E%3C/svg%3E">
 <style>
 .credits{max-width:980px;margin:0 auto;padding:48px max(20px,5vw) 72px}
