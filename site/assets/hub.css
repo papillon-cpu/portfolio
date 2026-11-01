@@ -232,3 +232,14 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
 .footer__bar a:hover { color: #fff; text-decoration: underline; }
 .footer__legal { padding: 0 max(16px, 3vw) 28px; color: #7c7c7c; font-size: 13px; }
 @media (max-width: 680px) { .footer__bar { flex-direction: column; align-items: flex-start; } }
+
+/* «полка» идёт под текстом и не наезжает на него ни на каком размере экрана */
+.hero { display: flex; flex-direction: column; align-items: stretch; min-height: 0; }
+.hero__text { padding: clamp(44px, 7vh, 88px) 24px 0; }
+.shelf { position: relative; left: auto; right: auto; bottom: auto; width: 100%; height: auto; margin-top: clamp(32px, 6vh, 64px); padding: 0 24px 56px; }
+@media (max-width: 900px) {
+  .shelf { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; max-width: 560px; width: 100%; margin-left: auto; margin-right: auto; padding: 0 20px 68px; }
+  .shelf__item { width: 100%; transform: none !important; margin-bottom: 0; }
+  .shelf__item:nth-child(n+4) { display: block; }
+  .shelf::after { left: -100vw; right: -100vw; bottom: 46px; }
+}

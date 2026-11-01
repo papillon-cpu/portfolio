@@ -123,6 +123,26 @@ async function open(path, opts = {}) {
   await ctx.close();
 }
 
+// Хаб: кнопка главного экрана не наезжает на «полку» ни на каком размере окна
+{
+  const sizes = [[390, 700], [500, 640], [768, 900], [1024, 700], [1440, 900], [1920, 1080]];
+  for (const [w, hgt] of sizes) {
+    const ctx = await browser.newContext({ viewport: { width: w, height: hgt } });
+    const page = await ctx.newPage();
+    await page.goto(BASE + "/", { waitUntil: "load" });
+    await page.waitForTimeout(1300);
+    const r = await page.evaluate(() => {
+      const btn = document.querySelector(".hero__text .btn").getBoundingClientRect();
+      const items = [...document.querySelectorAll(".shelf__item")].map((e) => e.getBoundingClientRect());
+      const overlap = items.some((b) => b.left < btn.right && b.right > btn.left && b.top < btn.bottom && b.bottom > btn.top);
+      const overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
+      return { overlap, overflow, proof: !!document.querySelector(".hero__proof"), visible: items.filter((b) => b.width > 0).length };
+    });
+    check(`Хаб ${w}x${hgt}: кнопка не наезжает на работы, лишней строки нет, горизонтального скролла нет`, !r.overlap && r.overflow <= 2 && !r.proof && r.visible === 4, JSON.stringify(r));
+    await ctx.close();
+  }
+}
+
 // Хаб: полка с работами, переходы, тема, Telegram
 {
   const { ctx, page, errs } = await open("/");

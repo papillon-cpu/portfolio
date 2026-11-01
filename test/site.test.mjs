@@ -138,3 +138,7 @@ test("хаб: подвал по образцу: призыв, две кнопк�
   assert.match(footer, /footer__bar[\s\S]*Telegram[\s\S]*Работы[\s\S]*Источники фотографий/);
   assert.doesNotMatch(footer, /ИНН|ОГРНИП|Красноярск|yandex\.ru/);
 });
+
+test("хаб: нет строки «Четыре демо-проекта…» над заголовком", () => {
+  assert.doesNotMatch(text(path.join(SITE, "index.html")), /hero__proof|Четыре демо-проекта/);
+});
