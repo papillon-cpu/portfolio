@@ -133,7 +133,7 @@ async function open(path, opts = {}) {
     await page.waitForTimeout(1300);
     const r = await page.evaluate(() => {
       const btn = document.querySelector(".hero__text .btn").getBoundingClientRect();
-      const items = [...document.querySelectorAll(".tile")].map((e) => e.getBoundingClientRect());
+      const items = [...document.querySelectorAll(".card3d")].map((e) => e.getBoundingClientRect());
       const overlap = items.some((b) => b.left < btn.right && b.right > btn.left && b.top < btn.bottom && b.bottom > btn.top);
       const overflow = document.documentElement.scrollWidth - document.documentElement.clientWidth;
       return { overlap, overflow, proof: !!document.querySelector(".hero__proof"), visible: items.filter((b) => b.width > 0).length };
@@ -146,14 +146,14 @@ async function open(path, opts = {}) {
 // Хаб: полка с работами, переходы, тема, Telegram
 {
   const { ctx, page, errs } = await open("/");
-  const hrefs = await page.$$eval(".tile", (as) => as.map((a) => a.getAttribute("href")));
+  const hrefs = await page.$$eval(".card3d", (as) => as.map((a) => a.getAttribute("href")));
   check("Хаб: четыре работы на полке", hrefs.length === 4, hrefs.join(", "));
   check("Хаб: раздела «Работы» и жёлтой строки больше нет", (await page.locator("#works.section, .ticker, .tab").count()) === 0);
   for (const h of hrefs) {
     const r = await page.request.get(BASE + "/" + h);
     check(`Хаб: ${h} открывается`, r.ok());
   }
-  await page.locator(".tile").nth(1).click();
+  await page.locator(".card3d").nth(1).evaluate((a) => a.click());
   await page.waitForURL(/belogorye/);
   check("Хаб: клик по работе ведёт в проект", /belogorye/.test(page.url()));
   await page.goBack();

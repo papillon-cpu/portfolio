@@ -114,7 +114,7 @@ test("хаб: нет жёлтой бегущей строки и дублиру�
   const hub = text(path.join(SITE, "index.html"));
   assert.doesNotMatch(hub, /class="ticker"|id="works" *>s*<h2|data-filter=/);
   assert.match(hub, /id="theme"/);
-  assert.equal((hub.match(/class="tile"/g) || []).length, 4);
+  assert.equal((hub.match(/class="card3d"/g) || []).length, 4);
 });
 
 test("помощник: палитра «хвоя и мята», лаймового акцента не осталось", () => {
