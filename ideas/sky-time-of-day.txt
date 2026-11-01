@@ -1,0 +1,3 @@
+Идея "небо по времени суток" (солнце и луна по дуге, звёзды ночью, ?tod=night для проверки)
+убрана с главной, но сохранена: git tag sky-idea (коммит 5716484).
+Посмотреть: git show sky-idea:site/assets/hub.js ; git checkout sky-idea -- site (в отдельной ветке)

@@ -28,23 +28,6 @@
     });
   }
 
-  // Небо: время суток посетителя; для проверки можно открыть страницу с ?tod=night
-  (function () {
-    var hero = document.getElementById("hero");
-    if (!hero) return;
-    var q = /[?&]tod=(dawn|day|dusk|night)/.exec(location.search);
-    var now = new Date(), hr = now.getHours() + now.getMinutes() / 60;
-    var tod = hr >= 5 && hr < 8 ? "dawn" : hr >= 8 && hr < 18 ? "day" : hr >= 18 && hr < 21.5 ? "dusk" : "night";
-    if (q) { tod = q[1]; hr = { dawn: 6.5, day: 13, dusk: 19.5, night: 1 }[tod]; }
-    hero.setAttribute("data-tod", tod);
-    // солнце идёт по дуге с 6 до 22 часов, луна ночью с 22 до 6
-    var sunUp = hr >= 6 && hr < 22;
-    var p = sunUp ? (hr - 6) / 16 : ((hr >= 22 ? hr - 22 : hr + 2) / 8);
-    // светило обходит заголовок: держится по краям, середину пропускает
-    hero.style.setProperty("--orb-x", (p < 0.5 ? 5 + p * 2 * 15 : 80 + (p - 0.5) * 2 * 15).toFixed(1));
-    hero.style.setProperty("--orb-y", (52 - Math.sin(p * Math.PI) * 34).toFixed(1));
-  })();
-
   // Главный экран: заголовок и подзаголовок печатаются по буквам, потом постепенно стираются
   (function () {
     var H = document.getElementById("tw-h"), S = document.getElementById("tw-s");
@@ -104,6 +87,10 @@
   (function () {
     var cv = document.getElementById("dots"), hero = document.getElementById("hero");
     if (!cv || !hero || !cv.getContext) return;
+    var dot = "19,19,19", hot = "19,19,19";
+    function colors() { var cs = getComputedStyle(hero); dot = cs.getPropertyValue("--dot").trim().replace(/s+/g, "") || dot; hot = cs.getPropertyValue("--dot-hot").trim().replace(/s+/g, "") || hot; }
+    colors();
+    new MutationObserver(colors).observe(document.documentElement, { attributes: true, attributeFilter: ["data-theme"] });
     var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = 1, step = 34, px = -999, py = -999, power = 0, visible = true;
     var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
     function size() {
@@ -133,14 +120,14 @@
         for (var c = 0; c < cols; c++) {
           var x = c * step, y = r * step;
           var wave = reduce ? 0.5 : 0.5 + 0.5 * Math.sin(c * 0.45 + r * 0.3 - t / 900);
-          var a = 0.12 + wave * 0.16, rad = 1.1 + wave * 0.7, lime = 0;
+          var a = 0.1 + wave * 0.14, rad = 1.1 + wave * 0.7, lime = 0;
           var dx = x - px, dy = y - py, d = Math.sqrt(dx * dx + dy * dy);
           if (cur > 0.01 && d < R) {
             var k = (1 - d / R) * cur;
             a += k * 0.6; rad += k * 3.2; lime = k;
             x += (dx / (d || 1)) * k * 9; y += (dy / (d || 1)) * k * 9;
           }
-          ctx.fillStyle = lime > 0.05 ? "rgba(" + Math.round(255 - 29 * lime) + "," + Math.round(255 - 9 * lime) + "," + Math.round(255 - 145 * lime) + "," + Math.min(a, 0.95).toFixed(2) + ")" : "rgba(255,255,255," + a.toFixed(2) + ")";
+          ctx.fillStyle = "rgba(" + (lime > 0.05 ? hot : dot) + "," + Math.min(a, 0.95).toFixed(2) + ")";
           ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
         }
       }
