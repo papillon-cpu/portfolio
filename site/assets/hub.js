@@ -28,6 +28,23 @@
     });
   }
 
+  // Небо: время суток посетителя; для проверки можно открыть страницу с ?tod=night
+  (function () {
+    var hero = document.getElementById("hero");
+    if (!hero) return;
+    var q = /[?&]tod=(dawn|day|dusk|night)/.exec(location.search);
+    var now = new Date(), hr = now.getHours() + now.getMinutes() / 60;
+    var tod = hr >= 5 && hr < 8 ? "dawn" : hr >= 8 && hr < 18 ? "day" : hr >= 18 && hr < 21.5 ? "dusk" : "night";
+    if (q) { tod = q[1]; hr = { dawn: 6.5, day: 13, dusk: 19.5, night: 1 }[tod]; }
+    hero.setAttribute("data-tod", tod);
+    // солнце идёт по дуге с 6 до 22 часов, луна ночью с 22 до 6
+    var sunUp = hr >= 6 && hr < 22;
+    var p = sunUp ? (hr - 6) / 16 : ((hr >= 22 ? hr - 22 : hr + 2) / 8);
+    // светило обходит заголовок: держится по краям, середину пропускает
+    hero.style.setProperty("--orb-x", (p < 0.5 ? 7 + p * 2 * 21 : 72 + (p - 0.5) * 2 * 21).toFixed(1));
+    hero.style.setProperty("--orb-y", (52 - Math.sin(p * Math.PI) * 34).toFixed(1));
+  })();
+
   // Карусель: работы на дуге, поворот следует за мышью или пальцем
   (function () {
     var ring = document.getElementById("ring"), spin = document.getElementById("spin");
