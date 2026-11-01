@@ -308,3 +308,13 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
 .hero__sub.tw-cursor::after { height: 1em; }
 @keyframes caret { 50% { opacity: 0; } }
 @media (prefers-reduced-motion: reduce) { .tw-cursor::after { animation: none; } }
+/* Бегущая строка: компактнее */
+.strip { min-height: 60px; }
+.strip__label { font-size: 12px; }
+.mq { padding: 0 clamp(20px, 2.8vw, 36px); }
+.mq--1 { font-size: 19px; }
+.mq--2 { font-size: 21px; }
+.mq--3 { font-size: 12px; letter-spacing: .28em; }
+.mq--4 { font-size: 14px; }
+.mq--5 { font-size: 22px; }
+.mq--6 { font-size: 19px; }

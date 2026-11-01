@@ -41,7 +41,7 @@
     var sunUp = hr >= 6 && hr < 22;
     var p = sunUp ? (hr - 6) / 16 : ((hr >= 22 ? hr - 22 : hr + 2) / 8);
     // светило обходит заголовок: держится по краям, середину пропускает
-    hero.style.setProperty("--orb-x", (p < 0.5 ? 7 + p * 2 * 21 : 72 + (p - 0.5) * 2 * 21).toFixed(1));
+    hero.style.setProperty("--orb-x", (p < 0.5 ? 5 + p * 2 * 15 : 80 + (p - 0.5) * 2 * 15).toFixed(1));
     hero.style.setProperty("--orb-y", (52 - Math.sin(p * Math.PI) * 34).toFixed(1));
   })();
 
