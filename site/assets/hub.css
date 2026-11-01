@@ -302,3 +302,9 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
 .hero { touch-action: pan-y; }
 @media (prefers-reduced-motion: reduce) { .sky__orb { animation: none; } .rot { transition: none; } }
 @media (max-width: 700px) { .sky__orb { width: 44px; box-shadow: 0 0 36px 14px var(--orb-glow); left: calc(78% + var(--orb-x, 50) * .16%); top: 6%; } }
+
+/* Печатающийся текст главного экрана */
+.tw-cursor::after { content: ""; display: inline-block; width: .08em; min-width: 2px; height: .9em; margin-left: .06em; vertical-align: -.06em; background: currentColor; animation: caret 1s steps(1) infinite; }
+.hero__sub.tw-cursor::after { height: 1em; }
+@keyframes caret { 50% { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .tw-cursor::after { animation: none; } }

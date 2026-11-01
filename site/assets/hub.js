@@ -45,16 +45,59 @@
     hero.style.setProperty("--orb-y", (52 - Math.sin(p * Math.PI) * 34).toFixed(1));
   })();
 
-  // Главный экран: слово в заголовке меняется
+  // Главный экран: заголовок и подзаголовок печатаются по буквам, потом постепенно стираются
   (function () {
-    var el = document.getElementById("rot");
-    if (!el) return;
+    var H = document.getElementById("tw-h"), S = document.getElementById("tw-s");
+    if (!H || !S) return;
     if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    var words = ["клиентов", "заявки", "звонки", "записи", "продажи"], i = 0;
-    setInterval(function () {
-      el.classList.add("is-out");
-      setTimeout(function () { i = (i + 1) % words.length; el.textContent = words[i]; el.classList.remove("is-out"); }, 360);
-    }, 2600);
+    var pairs = [
+      ["Сайты и боты, которые приводят клиентов.", "Веб-дизайн, лендинги, Telegram-боты, мини-приложения и автоматизации для малого бизнеса."],
+      ["Сайт, который работает, пока вы заняты делом.", "Принимает заявки, отвечает клиентам и ничего не теряет."],
+      ["Бот, который отвечает за секунды.", "Собирает контакты и передаёт заявку вам в Telegram."]
+    ];
+    var hFull = pairs[0][0], sFull = pairs[0][1];
+    // высота резервируется по самой длинной паре, чтобы страница не прыгала
+    function reserve() {
+      H.style.minHeight = S.style.minHeight = "";
+      var mh = 0, ms = 0;
+      pairs.forEach(function (p) {
+        H.textContent = p[0]; S.textContent = p[1];
+        mh = Math.max(mh, H.offsetHeight); ms = Math.max(ms, S.offsetHeight);
+      });
+      H.style.minHeight = mh + "px"; S.style.minHeight = ms + "px";
+    }
+    var wait = function (ms) { return new Promise(function (r) { setTimeout(r, ms); }); };
+    async function type(el, text, speed) {
+      el.classList.add("tw-cursor");
+      for (var i = 1; i <= text.length; i++) { el.textContent = text.slice(0, i); await wait(speed + Math.random() * speed * 0.6); }
+    }
+    async function erase(el, text, speed) {
+      el.classList.add("tw-cursor");
+      for (var i = text.length - 1; i >= 0; i--) { el.textContent = text.slice(0, i); await wait(speed); }
+    }
+    async function run() {
+      var n = 0;
+      reserve(); window.addEventListener("resize", function () { var a = H.textContent, b = S.textContent; reserve(); H.textContent = a; S.textContent = b; });
+      H.textContent = ""; S.textContent = "";
+      await wait(500);
+      for (;;) {
+        var p = pairs[n % pairs.length];
+        H.classList.add("tw-cursor"); S.classList.remove("tw-cursor");
+        await type(H, p[0], 55);
+        H.classList.remove("tw-cursor");
+        await wait(250);
+        await type(S, p[1], 22);
+        S.classList.remove("tw-cursor");
+        await wait(3200);
+        await erase(S, p[1], 9);
+        S.classList.remove("tw-cursor");
+        await erase(H, p[0], 22);
+        H.classList.remove("tw-cursor");
+        await wait(500);
+        n++;
+      }
+    }
+    (document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve()).then(run);
   })();
 
   // Главный экран: сетка точек оживает от курсора или касания, а без них мерцает волной
