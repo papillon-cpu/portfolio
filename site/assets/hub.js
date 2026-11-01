@@ -45,6 +45,68 @@
     hero.style.setProperty("--orb-y", (52 - Math.sin(p * Math.PI) * 34).toFixed(1));
   })();
 
+  // Главный экран: слово в заголовке меняется
+  (function () {
+    var el = document.getElementById("rot");
+    if (!el) return;
+    if (window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    var words = ["клиентов", "заявки", "звонки", "записи", "продажи"], i = 0;
+    setInterval(function () {
+      el.classList.add("is-out");
+      setTimeout(function () { i = (i + 1) % words.length; el.textContent = words[i]; el.classList.remove("is-out"); }, 360);
+    }, 2600);
+  })();
+
+  // Главный экран: сетка точек оживает от курсора или касания, а без них мерцает волной
+  (function () {
+    var cv = document.getElementById("dots"), hero = document.getElementById("hero");
+    if (!cv || !hero || !cv.getContext) return;
+    var ctx = cv.getContext("2d"), W = 0, H = 0, dpr = 1, step = 34, px = -999, py = -999, power = 0, visible = true;
+    var reduce = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    function size() {
+      var b = hero.getBoundingClientRect();
+      dpr = Math.min(window.devicePixelRatio || 1, 2);
+      W = b.width; H = b.height;
+      cv.width = Math.round(W * dpr); cv.height = Math.round(H * dpr);
+      ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+      step = W < 600 ? 28 : 34;
+    }
+    function point(e) {
+      var b = hero.getBoundingClientRect();
+      px = e.clientX - b.left; py = e.clientY - b.top; power = 1;
+    }
+    hero.addEventListener("pointermove", point);
+    hero.addEventListener("pointerdown", point);
+    hero.addEventListener("pointerleave", function () { power = 0; });
+    hero.addEventListener("pointerup", function (e) { if (e.pointerType !== "mouse") power = 0; });
+    var cur = 0;
+    function draw(t) {
+      requestAnimationFrame(draw);
+      if (!visible) return;
+      cur += (power - cur) * 0.12;
+      ctx.clearRect(0, 0, W, H);
+      var cols = Math.ceil(W / step) + 1, rows = Math.ceil(H / step) + 1, R = 150;
+      for (var r = 0; r < rows; r++) {
+        for (var c = 0; c < cols; c++) {
+          var x = c * step, y = r * step;
+          var wave = reduce ? 0.5 : 0.5 + 0.5 * Math.sin(c * 0.45 + r * 0.3 - t / 900);
+          var a = 0.12 + wave * 0.16, rad = 1.1 + wave * 0.7, lime = 0;
+          var dx = x - px, dy = y - py, d = Math.sqrt(dx * dx + dy * dy);
+          if (cur > 0.01 && d < R) {
+            var k = (1 - d / R) * cur;
+            a += k * 0.6; rad += k * 3.2; lime = k;
+            x += (dx / (d || 1)) * k * 9; y += (dy / (d || 1)) * k * 9;
+          }
+          ctx.fillStyle = lime > 0.05 ? "rgba(" + Math.round(255 - 29 * lime) + "," + Math.round(255 - 9 * lime) + "," + Math.round(255 - 145 * lime) + "," + Math.min(a, 0.95).toFixed(2) + ")" : "rgba(255,255,255," + a.toFixed(2) + ")";
+          ctx.beginPath(); ctx.arc(x, y, rad, 0, 6.2832); ctx.fill();
+        }
+      }
+    }
+    size(); window.addEventListener("resize", size);
+    if ("IntersectionObserver" in window) new IntersectionObserver(function (en) { visible = en[0].isIntersecting; }).observe(hero);
+    requestAnimationFrame(draw);
+  })();
+
   // Карусель: работы на дуге, поворот следует за мышью или пальцем
   (function () {
     var ring = document.getElementById("ring"), spin = document.getElementById("spin");

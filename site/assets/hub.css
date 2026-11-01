@@ -292,3 +292,13 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
 [data-theme="dark"] .sky::after { content: ""; position: absolute; inset: 0; background: rgba(0, 0, 0, .28); }
 @media (prefers-reduced-motion: reduce) { .sky__stars { animation: none; } .sky__orb, .hero { transition: none; } }
 .sky__ridge { display: none; }
+
+/* Анимация главного экрана: точки за курсором или пальцем, меняющееся слово, плавающее светило */
+.sky__dots { position: absolute; inset: 0; width: 100%; height: 100%; }
+.sky__orb { animation: bob 7s ease-in-out infinite alternate; }
+@keyframes bob { from { margin-top: -6px; } to { margin-top: 8px; } }
+.rot { display: inline-block; white-space: nowrap; transition: opacity .35s, transform .35s; }
+.rot.is-out { opacity: 0; transform: translateY(.25em); }
+.hero { touch-action: pan-y; }
+@media (prefers-reduced-motion: reduce) { .sky__orb { animation: none; } .rot { transition: none; } }
+@media (max-width: 700px) { .sky__orb { width: 44px; box-shadow: 0 0 36px 14px var(--orb-glow); left: calc(78% + var(--orb-x, 50) * .16%); top: 6%; } }
