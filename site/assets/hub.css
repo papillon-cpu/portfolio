@@ -243,3 +243,17 @@ a.shelf__item:hover { transform: translateY(-8px); box-shadow: 0 26px 44px rgba(
   .shelf__item:nth-child(n+4) { display: block; }
   .shelf::after { left: -100vw; right: -100vw; bottom: 46px; }
 }
+
+/* Работы: все примеры в полосе направлений, подписи остаются поверх */
+.hero { padding-bottom: clamp(48px, 9vh, 96px); }
+.banner { overflow: hidden; }
+.banner::before { z-index: 1; pointer-events: none; }
+.banner__tiles { position: absolute; inset: 0; display: flex; }
+.tile { position: relative; flex: 1; background-size: cover; background-position: center; text-decoration: none; color: #fff; transition: flex .3s; }
+.tile + .tile { border-left: 1px solid rgba(255, 255, 255, .25); }
+.tile span { position: absolute; left: 12px; bottom: 10px; font: 600 12px/1 var(--sans); text-transform: uppercase; letter-spacing: .04em; opacity: .9; }
+.tile:hover { flex: 1.35; }
+.tile:focus-visible { outline: 3px solid var(--lime); outline-offset: -3px; z-index: 3; }
+.banner__text { position: relative; z-index: 2; pointer-events: none; }
+.banner__text .btn { pointer-events: auto; }
+.banner { min-height: 360px; }
