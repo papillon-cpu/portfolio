@@ -179,9 +179,9 @@ async function open(path, opts = {}) {
   const f = page.locator("footer.footer");
   await f.scrollIntoViewIfNeeded();
   check("Хаб: подвал начинается с заголовка «Обсудим ваш проект?»", (await f.locator("h2").innerText()).includes("Обсудим ваш проект"));
-  check("Хаб: в подвале две кнопки: Telegram и «Смотреть работы»", (await f.locator(".cta__btns .btn").allInnerTexts()).join("|").toLowerCase() === "написать в telegram|смотреть работы");
+  check("Хаб: в подвале две кнопки: Telegram и почта", (await f.locator(".cta__btns .btn").allInnerTexts()).join("|").toLowerCase() === "написать в telegram|написать на почту" && (await f.locator(".cta__btns .btn--ghost").getAttribute("href")) === "mailto:nkutylov@yandex.ru");
   check("Хаб: под кнопками строка с контактом", (await f.locator(".cta__note").innerText()).includes("@sumashedshii0"));
-  check("Хаб: нижняя полоса: имя слева, три ссылки справа, мелкая строка ниже", (await f.locator(".footer__bar > span").innerText()).includes("© 2026 Никита Кутылов") && (await f.locator(".footer__bar nav a").count()) === 3 && (await f.locator(".footer__legal").count()) === 1);
+  check("Хаб: нижняя полоса: имя слева, четыре ссылки справа, мелкая строка ниже", (await f.locator(".footer__bar > span").innerText()).includes("© 2026 Никита Кутылов") && (await f.locator(".footer__bar nav a").count()) === 4 && (await f.locator(".footer__legal").count()) === 1);
   check("Хаб: без ошибок в консоли", errs.length === 0, errs.join(" | "));
   await ctx.close();
 }

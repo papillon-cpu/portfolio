@@ -136,7 +136,9 @@ test("хаб: подвал по образцу: призыв, две кнопк�
   assert.match(footer, /Обсудим ваш проект\?/);
   assert.equal((footer.match(/class="btn btn--/g) || []).length, 2);
   assert.match(footer, /footer__bar[\s\S]*Telegram[\s\S]*Работы[\s\S]*Источники фотографий/);
-  assert.doesNotMatch(footer, /ИНН|ОГРНИП|Красноярск|yandex\.ru/);
+  assert.doesNotMatch(footer, /ИНН|ОГРНИП|Красноярск/);
+  // единственный адрес почты в подвале: свой
+  assert.deepEqual([...new Set(footer.match(/[\w.-]+@[\w.-]+\.\w+/g) || [])], ["nkutylov@yandex.ru"]);
 });
 
 test("хаб: нет строки «Четыре демо-проекта…» над заголовком", () => {
