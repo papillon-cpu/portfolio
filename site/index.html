@@ -12,8 +12,21 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400;500;600&family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&family=Montserrat:wght@300&family=Unbounded:wght@600&family=Lora:ital,wght@1,500&display=swap" rel="stylesheet">
 <script>try{document.documentElement.setAttribute("data-theme",localStorage.getItem("theme")==="dark"?"dark":"light")}catch(e){document.documentElement.setAttribute("data-theme","light")}</script>
-<link rel="stylesheet" href="assets/hub.css?v=18">
+<link rel="stylesheet" href="assets/hub.css?v=19">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23e2f66e'/%3E%3Cpath d='M8 24V8l8 10V8m8 16V8' fill='none' stroke='%23131313' stroke-width='2.4' stroke-linejoin='round'/%3E%3C/svg%3E">
+
+<style>
+/* prices */
+.prices { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px 48px; max-width: 1080px; margin: 34px auto 0; padding: 0 24px; }
+.price { border-top: 1px solid var(--line); padding-top: 16px; }
+.price__row { display: flex; align-items: baseline; justify-content: space-between; gap: 14px; flex-wrap: wrap; margin-bottom: 10px; }
+.price__name { font: 600 18px/1.2 var(--sans); text-transform: uppercase; margin: 0; letter-spacing: 0; }
+.price__val { font: 400 22px/1 var(--sans); background: var(--lime); color: var(--ink); padding: 6px 12px; white-space: nowrap; }
+.price p { margin: 0 0 8px; color: var(--soft); font-size: 15px; max-width: 48ch; }
+.price__term { font-size: 12px !important; text-transform: uppercase; letter-spacing: .05em; color: var(--mute) !important; margin: 0 !important; }
+.price__cta { margin-top: 12px; }
+@media (max-width: 900px) { .prices { grid-template-columns: 1fr; gap: 22px; } }
+</style>
 </head>
 <body>
 
@@ -23,6 +36,7 @@
   <nav class="nav__links" aria-label="Основная навигация">
     <a href="#works">Работы</a>
     <a href="#process">Процесс</a>
+    <a href="#prices">Цены</a>
     <a href="#why">Подход</a>
     <a href="#faq">Вопросы</a>
   </nav>
@@ -78,6 +92,49 @@
     </ol>
   </section>
 
+  <section class="section" id="prices">
+    <h2 class="reveal">Что и за сколько</h2>
+    <p class="lead reveal">Точную цену называю после короткого брифа, до начала работы. Оплата — 50% вперёд, остальное после показа готового результата.</p>
+    <div class="prices">
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">Лендинг под одну задачу</h3><span class="price__val">от 15 000 ₽</span></div>
+        <p>Одностраничный сайт под конкретное действие: оставить заявку, записаться, купить. Дизайн, тексты, форма заявки, адаптация под телефон.</p>
+        <p class="price__term">Срок: 3–5 дней</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">Сайт из 3–5 страниц</h3><span class="price__val">от 30 000 ₽</span></div>
+        <p>Многостраничный сайт: услуги, цены, о нас, контакты, блог. Собран на быстром хостинге, подключён домен.</p>
+        <p class="price__term">Срок: 1–2 недели</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">Telegram-бот для заявок</h3><span class="price__val">от 20 000 ₽</span></div>
+        <p>Бот принимает заявки в Telegram, задаёт вопросы, присылает их вам и ведёт клиента по сценарию до записи.</p>
+        <p class="price__term">Срок: 1–2 недели</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">ИИ-помощник с нейросетью</h3><span class="price__val">от 35 000 ₽</span></div>
+        <p>Бот или виджет на сайте, который отвечает на вопросы клиента, подбирает услугу и передаёт вам диалог.</p>
+        <p class="price__term">Срок: 2–3 недели</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">Разбор ниши и прототип</h3><span class="price__val">5 000 ₽</span></div>
+        <p>Смотрю ваш текущий сайт или идею, разбираю, где теряются клиенты, и собираю прототип первого экрана.</p>
+        <p class="price__term">Срок: 1–2 дня</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+      <article class="price reveal">
+        <div class="price__row"><h3 class="price__name">Сопровождение и правки</h3><span class="price__val">от 3 000 ₽/мес</span></div>
+        <p>Правки в согласованном объёме, обновления, мелкие доработки, консультации по работе с сайтом.</p>
+        <p class="price__term">Помесячно, без привязки</p>
+        <div class="price__cta"><a class="btn btn--line" href="https://t.me/sumashedshii0" target="_blank" rel="noopener">Обсудить</a></div>
+      </article>
+    </div>
+  </section>
+
   <section class="dark" aria-labelledby="principles">
     <h2 id="principles" class="reveal">Принципы работы</h2>
     <div class="dark__grid">
@@ -112,7 +169,7 @@
       <div class="ring__spin" id="spin">
         <a class="card3d" href="works/taganay-expedition/index.html" aria-label="Тропа Таганая: лендинг, демо"><img src="assets/img/cover-taganay.jpg" alt="" draggable="false"><span class="card3d__cap"><b>Тропа Таганая</b><i>лендинг тура</i></span></a>
         <a class="card3d" href="works/belogorye/index.html" aria-label="Белогорье: лендинг, демо"><img src="assets/img/cover-belogorye.jpg" alt="" draggable="false"><span class="card3d__cap"><b>Белогорье</b><i>лендинг школы</i></span></a>
-        <a class="card3d" href="works/meridian/index.html" aria-label="Меридиан: лендинг, демо"><img src="assets/img/cover-meridian.jpg" alt="" draggable="false"><span class="card3d__cap"><b>Меридиан</b><i>лендинг клуба</i></span></a>
+        <a class="card3d" href="works/meridian/index.html" aria-label="Мередиан: лендинг, демо"><img src="assets/img/cover-meridian.jpg" alt="" draggable="false"><span class="card3d__cap"><b>Мередиан</b><i>лендинг клуба</i></span></a>
         <a class="card3d" href="works/assistant/index.html" aria-label="Помощник заявок: живое демо"><img src="assets/img/cover-assistant.jpg" alt="" draggable="false"><span class="card3d__cap"><b>Помощник заявок</b><i>живое демо бота</i></span></a>
       </div>
     </div>
@@ -136,7 +193,7 @@
   <section class="section" id="faq">
     <h2 class="reveal">Вопросы</h2>
     <div class="faq reveal">
-      <details><summary>Сколько это стоит?</summary><p>Зависит от задачи: лендинг, бот или автоматизация считаются по-разному. Цену и объём называю после короткого брифа, до начала работы.</p></details>
+      <details><summary>Сколько это стоит?</summary><p>Лендинг — от 15 000 ₽, сайт из 3–5 страниц — от 30 000 ₽, Telegram-бот для заявок — от 20 000 ₽, ИИ-помощник — от 35 000 ₽. Точная цена и объём называю после короткого брифа, до начала работы.</p></details>
       <details><summary>Как проходит оплата?</summary><p>Предоплата 50%, остальное после показа готовой работы. Исходники и доступы передаю после полной оплаты. На крупные работы оформляем договор и акт.</p></details>
       <details><summary>Какие сроки?</summary><p>Зависят от объёма и от того, как быстро вы присылаете материалы. Срок называю вместе с ценой и фиксирую.</p></details>
       <details><summary>Что нужно от вас, чтобы начать?</summary><p>Рассказать, чем занимается бизнес и что должен делать сайт или бот. Хорошо, если есть логотип, фотографии и тексты. Если нет, подскажу, как их подготовить.</p></details>
