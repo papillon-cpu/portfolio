@@ -57,7 +57,8 @@ test("сайт: в проектах не осталось чужого конт�
 
 test("сайт: контакты везде одни и те же, выдуманных телефонов и почты нет", () => {
   const all = ours(pages).map(text).join("\n");
-  assert.match(all, /t\.me\/sumashedshii0/);
+  assert.match(all, /t\.me\/papi_lion/);
+  assert.doesNotMatch(all, /t\.me\/sumashedshii0/);
   assert.doesNotMatch(all, /8 800 000|tel:\+7800|tel:\+79130000000|hello@|ski@|@tropasevera/);
 });
 
@@ -125,7 +126,7 @@ test("помощник: палитра «хвоя и мята», лаймово�
 
 test("хаб: в подвале нет колонки «Работы» (работы лежат на «полке» наверху)", () => {
   const hub = text(path.join(SITE, "index.html"));
-  const footer = hub.slice(hub.indexOf('<footer class="footer">'));
+  const footer = hub.slice(hub.indexOf('<footer class="footer"'));
   assert.doesNotMatch(footer, /<h4>Работы<\/h4>/);
   assert.doesNotMatch(footer, /works\/taganay-expedition/);
 });
@@ -135,7 +136,9 @@ test("хаб: подвал по образцу: призыв, две кнопк�
   const footer = hub.slice(hub.indexOf('<footer class="footer"'));
   assert.match(footer, /Обсудим ваш проект\?/);
   assert.equal((footer.match(/class="btn btn--/g) || []).length, 2);
-  assert.match(footer, /footer__bar[\s\S]*Telegram[\s\S]*Работы[\s\S]*Источники фотографий/);
+  assert.match(footer, /footer__bar[\s\S]*Никита Кутылов/);
+  assert.match(footer, /href="https:\/\/t\.me\/papi_lion"/);
+  assert.match(footer, /href="credits\.html"/);
   assert.doesNotMatch(footer, /ИНН|ОГРНИП|Красноярск/);
   // единственный адрес почты в подвале: свой
   assert.deepEqual([...new Set(footer.match(/[\w.-]+@[\w.-]+\.\w+/g) || [])], ["nkutylov@yandex.ru"]);
